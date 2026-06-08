@@ -30,7 +30,7 @@ export function getWorksImagePath(category, imgName) {
 export function getCarouselImagePath(imgName) {
   const isProd = process.env.NODE_ENV === "production";
   if (isProd) {
-    return `${R2_PUBLIC_URL}/images/carousell/${imgName}`; // 依照您描述的 R2 資料夾名稱
+    return `${R2_PUBLIC_URL}/images/carousel/${imgName}`; // 依照您描述的 R2 資料夾名稱
   } else {
     return `/carousel/${imgName}`;
   }
