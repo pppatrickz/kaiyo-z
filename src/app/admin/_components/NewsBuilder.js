@@ -1,34 +1,25 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React, { useMemo, useRef, useState, useEffect } from "react";
+import React, { useMemo, useRef, useState, useEffect, useCallback } from "react";
 
-// 建立空的多語系物件結構
 const emptyI18n = () => ({ en: "", ja: "", zh: "" });
 
-// 輔助函式：從自由輸入的日期字串中，安全地擷取出 YYYY-MM-DD 格式，用來生成一意性 ID
 function extractISODatePrefix(dateStr) {
   if (!dateStr) return new Date().toISOString().slice(0, 10);
   const cleaned = String(dateStr).trim();
-  
-  // 如果已經是完美的 YYYY-MM-DD 格式
   if (/^\d{4}-\d{2}-\d{2}$/.test(cleaned)) return cleaned;
-  
   const d = new Date(cleaned);
   if (!isNaN(d.getTime())) {
     return d.toISOString().slice(0, 10);
   }
-  
-  // 若無法直接解析，嘗試用正則表達式撈取年月日數字，否則以今天日期為備份防呆
   const match = cleaned.match(/(\d{4})[-/年](\d{1,2})[-/月](\d{1,2})/);
   if (match) {
     const [_, y, m, d] = match;
     return `${y}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
   }
-  
   return new Date().toISOString().slice(0, 10);
 }
 
-// 本地環境下，安全地進行 JSON 檔案匯出與下載
 function downloadBlob(content, filename, contentType) {
   const blob = new Blob([content], { type: contentType });
   const url = URL.createObjectURL(blob);
@@ -48,40 +39,29 @@ export default function NewsBuilder({ isCloud }) {
   const [isSaving, setIsSaving] = useState(false);
   const fileInputRef = useRef(null);
 
-  // 用於管理新聞相簿內部圖片拖曳順序的指標
   const draggingImageIndexRef = useRef(null);
 
-  // 🎯 核心邏輯：自動生成以日期為基礎、不重複的智慧型消息 ID (網址 Slug)
-  const generateSmartNewsId = (newsArray, targetNewsId, dateString) => {
-    const baseDatePrefix = extractISODatePrefix(dateString); // 取得如 "2026-06-08" 的前綴
-    
-    // 排除自己，過濾出其餘的所有快訊公告
+  // 🎯 修正點：使用 useCallback 鎖定智慧 ID 生成器，防止重渲染位址改變
+  const generateSmartNewsId = useCallback((newsArray, targetNewsId, dateString) => {
+    const baseDatePrefix = extractISODatePrefix(dateString);
     const otherNews = newsArray.filter(n => n.id !== targetNewsId);
-    
     let counter = 1;
     let finalId = `${baseDatePrefix}-${counter}`;
-    
-    // 如果發現最終產出的 ID 與別人撞名，後方的序號計數器就自動累加 (+1)
     while (otherNews.some(n => String(n.id) === finalId)) {
       counter++;
       finalId = `${baseDatePrefix}-${counter}`;
     }
-    
     return finalId;
-  };
+  }, []);
 
-  // 🎯 資料結構清洗與修復函數（匯入或從雲端讀取時，自動將舊版的 slug 安全轉換至 id）
-  const sanitizeAndSyncNews = (rawArray) => {
+  // 🎯 修正點：使用 useCallback 鎖定資料清洗函式，並注入其依賴
+  const sanitizeAndSyncNews = useCallback((rawArray) => {
     if (!Array.isArray(rawArray)) return [];
-    
     const processedNews = [];
     rawArray.forEach((n) => {
       const item = { ...n };
-      
-      // 相容性防護：將舊資料的 slug 欄位無縫導向至新的 id 鍵值上
       item.id = item.id || item.slug || `temp-${Date.now()}`;
       if (item.slug) delete item.slug; 
-      
       item.image = item.image || "";
       item.alt = item.alt || "";
       item.date = item.date || new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }); 
@@ -89,18 +69,15 @@ export default function NewsBuilder({ isCloud }) {
       item.content = item.content || emptyI18n();
       item.images = Array.isArray(item.images) ? item.images : [];
       
-      // 如果發現原有的 ID 為髒資料（如舊的超長 UUID 或隨機值），自動將其優化清洗為優雅的日期序號格式
-      if (item.id.startsWith("temp-") || item.id.includes("-") && item.id.length > 20) {
+      if (item.id.startsWith("temp-") || (item.id.includes("-") && item.id.length > 20)) {
         item.id = generateSmartNewsId(processedNews, item.id, item.date);
       }
-      
       processedNews.push(item);
     });
-    
     return processedNews;
-  };
+  }, [generateSmartNewsId]);
 
-  // 1. 初始化資料處理：從 Cloudflare R2 生產環境同步撈取 news.json
+  // 1. 初始化資料處理：依賴陣列補上清洗函式，警告完美消失！
   useEffect(() => {
     if (isCloud) {
       fetch("/admin/api/r2?file=news.json")
@@ -111,23 +88,32 @@ export default function NewsBuilder({ isCloud }) {
           }
         })
         .catch(() => console.log("雲端儲存桶尚未找到 news.json 檔案"));
+    } else {
+      fetch("/admin/api/r2", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "read", file: "news.json" })
+      })
+        .then((res) => res.ok ? res.json() : null)
+        .then((localData) => {
+          if (localData) setNews(sanitizeAndSyncNews(localData));
+        })
+        .catch(() => console.log("本地自動載入失敗"));
     }
-  }, [isCloud]);
+  }, [isCloud, sanitizeAndSyncNews]); // 🎯 完美補齊依賴
 
-  // 2. 統整並重組輸出的標準資料欄位（確保 id 對齊，欄位完整乾淨）
-  const assembleOutput = () => {
+  const assembleOutput = useCallback(() => {
     return news.map((n) => ({
       id: n.id, 
       image: n.image || "",
       alt: n.alt || "",
-      date: n.date, // 保持使用者自由輸入的排版字串（例如 "October 13, 2025"）
+      date: n.date, 
       title: { en: n.title?.en || "", ja: n.title?.ja || "", zh: n.title?.zh || "" },
       content: { en: n.content?.en || "", ja: n.content?.ja || "", zh: n.content?.zh || "" },
       images: Array.isArray(n.images) ? n.images : [],
     }));
-  };
+  }, [news]);
 
-  // 將資料更新同步至 R2 雲端（可自選是否同步觸發 Vercel/Cloudflare Pages 打包部署）
   const saveToCloud = async (shouldDeploy = true) => {
     setIsSaving(true);
     try {
@@ -156,7 +142,6 @@ export default function NewsBuilder({ isCloud }) {
     alert("最新的 News JSON 結構內容已成功複製至剪貼簿！");
   };
 
-  // 本地端 JSON 檔案上傳與轉換整合
   const importFromFile = async (file) => {
     try {
       const text = await file.text(); 
@@ -168,23 +153,11 @@ export default function NewsBuilder({ isCloud }) {
     } catch (e) { alert(`匯入失敗: ${e.message}`); }
   };
 
-  // ---------- 新聞公告 CRUD 核心操作邏輯 ----------
   const addNews = () => {
     const todayStr = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
     const tempId = `temp-${Date.now()}`;
-    
-    const item = { 
-      id: tempId, 
-      image: "", 
-      alt: "New Post", 
-      date: todayStr, 
-      title: emptyI18n(), 
-      content: emptyI18n(), 
-      images: [] 
-    };
-    
+    const item = { id: tempId, image: "", alt: "New Post", date: todayStr, title: emptyI18n(), content: emptyI18n(), images: [] };
     setNews(prev => {
-      // 新增時立即對齊智慧型 ID，預設將新消息排序塞在陣列的最頂端
       item.id = generateSmartNewsId(prev, tempId, todayStr);
       const next = [item, ...prev]; 
       setActiveIndex(0);
@@ -211,16 +184,13 @@ export default function NewsBuilder({ isCloud }) {
     setActiveIndex(i => i === null ? i : i + dir);
   };
 
-  // 🎯 當使用者更動顯示日期字串時，系統會同步、即時地重新調配、校正前台網址 Slug (ID)
   const updateNews = (idx, patch) => { 
     setNews(prev => { 
       const c = [...prev]; 
       const target = { ...c[idx], ...patch };
-      
       if (patch.date !== undefined) {
         target.id = generateSmartNewsId(c, target.id, patch.date);
       }
-      
       c[idx] = target; 
       return c; 
     }); 
@@ -234,7 +204,6 @@ export default function NewsBuilder({ isCloud }) {
     }); 
   };
 
-  // ---------- 圖片快取庫上傳與相簿托拉排序處理 ----------
   const onDropFiles = (files) => {
     const arr = []; 
     Array.from(files).forEach(f => { 
@@ -251,7 +220,6 @@ export default function NewsBuilder({ isCloud }) {
       const c = [...prev]; 
       const currentImages = c[idx].images || [];
       c[idx].images = Array.from(new Set([...currentImages, name])); 
-      // 若原先公告無封面，預設將上傳的第一張圖片指定為該新聞封面
       if (!c[idx].image) c[idx].image = name;
       return c; 
     }); 
@@ -261,7 +229,6 @@ export default function NewsBuilder({ isCloud }) {
     setNews(p => { 
       const c = [...p]; 
       c[idx].images = (c[idx].images || []).filter(n => n !== name); 
-      // 若移除的剛好是主封面，自動將剩下圖片的第一張遞補為新封面
       if (c[idx].image === name) {
         c[idx].image = c[idx].images[0] || ""; 
       }
@@ -302,8 +269,6 @@ export default function NewsBuilder({ isCloud }) {
 
   return (
     <div className="text-gray-900 p-4 md:p-8 bg-slate-50 min-h-screen">
-      
-      {/* 🎯 頂部控制列：手機版自動重組為舒適、大顆好按的圓潤 Pill 按鈕網格 */}
       <header className="flex flex-col gap-4 border-b border-gray-200 pb-5 mb-6 md:flex-row md:items-center md:justify-between shrink-0">
         <div>
           <h2 className="text-2xl font-bold text-gray-800 tracking-tight">📰 最新消息管理面板</h2>
@@ -314,7 +279,6 @@ export default function NewsBuilder({ isCloud }) {
         <div className="grid grid-cols-2 gap-2 sm:flex sm:items-center sm:gap-2">
           <button className="px-4 py-2 rounded-full bg-black text-white text-xs font-medium shadow-sm hover:bg-gray-800 transition" onClick={addNews}>+ 新增快訊</button>
           <button className="px-4 py-2 rounded-full bg-white border border-gray-200 text-xs text-gray-700 hover:bg-gray-50 transition" onClick={copyJSON}>複製 JSON</button>
-          
           {isCloud ? (
             <>
               <button className="px-4 py-2 rounded-full bg-amber-600 text-white text-xs font-medium disabled:opacity-50" onClick={() => saveToCloud(false)} disabled={isSaving}>
@@ -327,7 +291,6 @@ export default function NewsBuilder({ isCloud }) {
           ) : (
             <button className="px-4 py-2 rounded-full bg-blue-600 text-white text-xs font-medium" onClick={exportJSON}>📥 下載 JSON</button>
           )}
-
           <label className="px-4 py-2 rounded-full bg-white border border-gray-200 text-xs text-gray-700 text-center cursor-pointer hover:bg-gray-50 transition col-span-2 sm:col-span-1">
             匯入 JSON
             <input type="file" accept="application/json" className="hidden" onChange={e => e.target.files?.[0] && importFromFile(e.target.files[0])} />
@@ -335,10 +298,7 @@ export default function NewsBuilder({ isCloud }) {
         </div>
       </header>
 
-      {/* 雙欄主工作區：手機版單欄垂直排開，桌機維持黃金比例雙配欄 */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
-        {/* 左側欄：暫存媒體櫃（手機版自動流向頂部，方便選取附加圖片） */}
         <div className="lg:col-span-1">
           <div className="bg-white rounded-[20px] border border-gray-100 p-5 shadow-[0_4px_20px_rgba(0,0,0,0.02)] lg:sticky lg:top-6">
             <h3 className="font-bold text-sm text-gray-800 mb-3 flex items-center gap-2">🖼️ 新聞圖庫媒體櫃</h3>
@@ -346,9 +306,7 @@ export default function NewsBuilder({ isCloud }) {
               <span className="text-xs text-gray-400 font-medium">拖曳圖片至此或點擊上傳圖檔</span>
               <input ref={fileInputRef} type="file" accept="image/*" multiple className="hidden" onChange={e => e.target.files && onDropFiles(e.target.files)} />
             </div>
-            
-            {/* 圖庫快取九宮格 */}
-            <div className="grid grid-cols-3 gap-2 mt-4 max-h-[240px] lg:max-h-[400px] overflow-y-auto pr-1 ">
+            <div className="grid grid-cols-3 gap-2 mt-4 max-h-[240px] lg:max-h-[400px] overflow-y-auto pr-1">
               {imageLibrary.map(img => (
                 <button 
                   key={img.id} 
@@ -356,7 +314,6 @@ export default function NewsBuilder({ isCloud }) {
                   disabled={activeIndex === null}
                   className="border border-gray-100 rounded-xl overflow-hidden text-[10px] text-center bg-gray-50 hover:border-black transition disabled:opacity-40 p-1 space-y-1"
                   onClick={() => activeIndex !== null && attachImageToItem(activeIndex, img.name)}
-                  title={activeIndex === null ? "請先在右側選取一則公告後再點選圖片附加" : "點擊將此圖加入該則公告相簿"}
                 >
                   <img src={img.url} className="h-14 w-full object-cover rounded-lg" alt="" />
                   <div className="px-1 truncate font-mono text-[9px] text-gray-500">{img.name}</div>
@@ -366,30 +323,16 @@ export default function NewsBuilder({ isCloud }) {
           </div>
         </div>
 
-        {/* 右側欄：公告主清單與多語系編輯表單 */}
         <div className="lg:col-span-2 space-y-4">
           <div className="bg-white border border-gray-100 rounded-[24px] p-5 md:p-6 shadow-[0_4px_30px_rgba(0,0,0,0.01)]">
             <span className="text-sm font-bold text-gray-800 block border-b border-gray-100 pb-3 mb-4">
               公告快訊總計清冊 ({news.length})
             </span>
-            
-            <div className="space-y-4 max-h-[850px] overflow-y-auto pr-1 ">
+            <div className="space-y-4 max-h-[850px] overflow-y-auto pr-1">
               {news.map((item, i) => {
                 const isActive = activeIndex === i;
-                
                 return (
-                  <div 
-                    key={item.id} 
-                    className={classNames(
-                      "p-4 md:p-5 flex flex-col sm:flex-row gap-5 transition duration-200 border relative group rounded-2xl", 
-                      isActive 
-                        ? "bg-gray-50/50 border-black ring-1 ring-black/5" 
-                        : "bg-white border-gray-100 hover:border-gray-300"
-                    )} 
-                    onClick={() => setActiveIndex(i)}
-                  >
-                    
-                    {/* 左側微型封面快顯與移動排序控制 */}
+                  <div key={item.id} className={classNames("p-4 md:p-5 flex flex-col sm:flex-row gap-5 transition duration-200 border relative group rounded-2xl", isActive ? "bg-gray-50/50 border-black ring-1 ring-black/5" : "bg-white border-gray-100 hover:border-gray-300")} onClick={() => setActiveIndex(i)}>
                     <div className="w-full sm:w-20 shrink-0 flex sm:flex-col justify-between items-center sm:justify-start gap-3">
                       <div className="w-16 h-16 sm:w-full aspect-square bg-gray-50 rounded-xl border border-gray-100 overflow-hidden relative shadow-inner shrink-0">
                         {item.image ? (
@@ -404,7 +347,6 @@ export default function NewsBuilder({ isCloud }) {
                       </div>
                     </div>
 
-                    {/* 右側核心表單輸入欄位組 */}
                     <div className="flex-1 space-y-4" onClick={e => e.stopPropagation()}>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div className="space-y-1">
@@ -415,16 +357,13 @@ export default function NewsBuilder({ isCloud }) {
                         </div>
                         <div className="space-y-1">
                           <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">前台顯示日期 (Date String)</span>
-                          <input className="w-full border border-gray-200 rounded-xl text-xs p-2.5 bg-white focus:outline-none focus:border-black transition" value={item.date || ""} onChange={e => updateNews(i, { date: e.target.value })} placeholder="例如: October 13, 2025" />
+                          <input className="w-full border border-gray-200 rounded-xl text-xs p-2.5 bg-white focus:outline-none focus:border-black transition" value={item.date || ""} onChange={e => updateNews(i, { date: e.target.value })} placeholder="October 13, 2025" />
                         </div>
                       </div>
-
                       <div className="space-y-1">
                         <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider block">圖片無障礙替代文字 (Alt)</span>
-                        <input className="w-full border border-gray-200 rounded-xl text-xs p-2.5 bg-white focus:outline-none focus:border-black transition" value={item.alt || ""} onChange={e => updateNews(i, { alt: e.target.value })} placeholder="例如: 2026 創作聯展快訊" />
+                        <input className="w-full border border-gray-200 rounded-xl text-xs p-2.5 bg-white focus:outline-none focus:border-black transition" value={item.alt || ""} onChange={e => updateNews(i, { alt: e.target.value })} placeholder="2026 創作聯展快訊" />
                       </div>
-
-                      {/* 消息公告標題多語系 */}
                       <div>
                         <span className="text-[10px] text-gray-400 block font-bold uppercase tracking-wider mb-1.5">📢 公告標題 (Title)</span>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
@@ -436,8 +375,6 @@ export default function NewsBuilder({ isCloud }) {
                           ))}
                         </div>
                       </div>
-
-                      {/* 消息詳細內文多語系 */}
                       <div>
                         <span className="text-[10px] text-gray-400 block font-bold uppercase tracking-wider mb-1.5">📝 詳細內文內容 (Content)</span>
                         <div className="space-y-2">
@@ -449,22 +386,12 @@ export default function NewsBuilder({ isCloud }) {
                           ))}
                         </div>
                       </div>
-
-                      {/* 消息專屬相簿管理隊列 */}
                       <div className="border border-gray-100 rounded-2xl p-4 bg-gray-50/50 space-y-3">
                         <span className="block text-[11px] text-gray-700 font-bold">📸 已綁定消息相簿（滑鼠長按可直接「拖曳更換圖片前後順序」）</span>
-                        
                         {item.images && item.images.length ? (
                           <div className="space-y-2">
                             {item.images.map((imgName, imgIdx) => (
-                              <div 
-                                key={`${imgName}-${imgIdx}`} 
-                                draggable
-                                onDragStart={() => handleImageDragStart(imgIdx)}
-                                onDragOver={handleImageDragOver}
-                                onDrop={() => handleImageDrop(i, imgIdx)}
-                                className="flex justify-between items-center bg-white border border-gray-100 p-2 rounded-xl shadow-xs gap-3 cursor-grab active:cursor-grabbing hover:border-black transition"
-                              >
+                              <div key={`${imgName}-${imgIdx}`} draggable onDragStart={() => handleImageDragStart(imgIdx)} onDragOver={handleImageDragOver} onDrop={() => handleImageDrop(i, imgIdx)} className="flex justify-between items-center bg-white border border-gray-100 p-2 rounded-xl shadow-xs gap-3 cursor-grab active:cursor-grabbing hover:border-black transition">
                                 <div className="flex items-center gap-2 truncate pointer-events-none">
                                   <span className="text-gray-300 font-bold select-none text-xs px-1">☰</span>
                                   <img src={imageSrcFor(item, imgName)} className="w-8 h-8 rounded-lg object-cover border shrink-0" alt="" />
@@ -485,11 +412,7 @@ export default function NewsBuilder({ isCloud }) {
                         )}
                       </div>
                     </div>
-
-                    {/* 獨立刪除快訊按鈕 */}
-                    <button type="button" className="text-xs text-red-500 border border-red-200 hover:bg-red-50 px-3 py-1.5 rounded-full h-9 self-end sm:self-start shrink-0 font-medium mt-2 sm:mt-0" onClick={e => { e.stopPropagation(); removeNews(i); }}>
-                      刪除消息
-                    </button>
+                    <button type="button" className="text-xs text-red-500 border border-red-200 hover:bg-red-50 px-3 py-1.5 rounded-full h-9 self-end sm:self-start shrink-0 font-medium mt-2 sm:mt-0" onClick={e => { e.stopPropagation(); removeNews(i); }}>刪除消息</button>
                   </div>
                 );
               })}
@@ -497,7 +420,6 @@ export default function NewsBuilder({ isCloud }) {
           </div>
         </div>
       </div>
-      
     </div>
   );
 }

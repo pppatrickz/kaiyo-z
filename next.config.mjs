@@ -1,4 +1,3 @@
-import webpack from 'next/dist/compiled/webpack/webpack.js';
 /** @type {import('next').NextConfig} */
 const isStaticExport = process.env.STATIC_EXPORT === 'true';
 
@@ -18,7 +17,9 @@ const nextConfig = {
   },
     env: {
   },
+  
 };
+
 
 
 export default nextConfig;

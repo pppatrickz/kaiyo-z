@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React, { useMemo, useRef, useState, useEffect } from "react";
+import React, { useMemo, useRef, useState, useEffect, useCallback } from "react";
 import { slugify } from "@/app/_lib/slugify"; 
 
 const emptyI18n = () => ({ en: "", ja: "", zh: "" });
@@ -46,7 +46,8 @@ export default function WorksBuilder({ isCloud }) {
     [categoryIds, data.categories]
   );
 
-  const generateSmartSlug = (worksArray, targetWorkId, currentCategory, currentDate, englishTitle) => {
+  // 🎯 修正點：使用 useCallback 鎖定智慧網址 Slug 生成器
+  const generateSmartSlug = useCallback((worksArray, targetWorkId, currentCategory, currentDate, englishTitle) => {
     const cleanDate = (currentDate || new Date().toISOString().slice(0, 10)).replace(/-/g, "");
     let baseSlug = "";
 
@@ -79,9 +80,10 @@ export default function WorksBuilder({ isCloud }) {
     }
 
     return finalSlug;
-  };
+  }, []);
 
-  const sanitizeAndSyncSlugs = (currentData) => {
+  // 🎯 修正點：使用 useCallback 鎖定作品資料清洗功能，並注入依賴
+  const sanitizeAndSyncSlugs = useCallback((currentData) => {
     if (!currentData || !Array.isArray(currentData.works)) return currentData;
     
     const processedWorks = [];
@@ -99,8 +101,9 @@ export default function WorksBuilder({ isCloud }) {
     });
 
     return { ...currentData, works: processedWorks };
-  };
+  }, [generateSmartSlug]);
 
+  // 🎯 修正點：初始化資料處理，依賴陣列加上安全鎖定後的 sanitizeAndSyncSlugs
   useEffect(() => {
     if (isCloud) {
       fetch("/admin/api/r2?file=works.json")
@@ -111,8 +114,20 @@ export default function WorksBuilder({ isCloud }) {
           }
         })
         .catch(() => console.log("無法自動取得雲端 R2 檔案"));
+    } else {
+      // 💻 本地環境：改成用 POST 去敲本地 API，並告訴它我們要 action: "read"
+      fetch("/admin/api/r2", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "read", file: "works.json" })
+      })
+        .then((res) => res.ok ? res.json() : null)
+        .then((localData) => {
+          if (localData) setData(sanitizeAndSyncSlugs(localData));
+        })
+        .catch(() => console.log("本地自動載入失敗"));
     }
-  }, [isCloud]);
+  }, [isCloud, sanitizeAndSyncSlugs]);
 
   const saveToCloud = async (shouldDeploy = true) => {
     setIsSaving(true);
@@ -352,7 +367,7 @@ export default function WorksBuilder({ isCloud }) {
           {/* 分類管理卡片：圓潤白淨風 */}
           <div className="bg-white rounded-[20px] border border-gray-100 p-5 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
             <h3 className="font-bold text-sm mb-4 text-gray-800 flex items-center gap-2">🏷️ 分類項目清單</h3>
-            <div className="space-y-3 max-h-[300px] overflow-y-auto pr-1 ">
+            <div className="space-y-3 max-h-[300px] overflow-y-auto pr-1">
               {categoryIds.map((id) => (
                 <div key={id} className="border border-gray-100 rounded-xl p-3.5 space-y-2 bg-gray-50/50">
                   <div className="flex justify-between items-center">
@@ -430,7 +445,7 @@ export default function WorksBuilder({ isCloud }) {
             </div>
 
             {/* 作品編輯主卡片陣列 */}
-            <div className="space-y-4 max-h-[850px] overflow-y-auto pr-1 ">
+            <div className="space-y-4 max-h-[850px] overflow-y-auto pr-1">
               {filteredWorks.map((work) => {
                 const i = data.works.indexOf(work);
                 const isActive = activeWorkIndex === i;
