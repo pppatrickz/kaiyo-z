@@ -3,21 +3,20 @@ import webpack from 'next/dist/compiled/webpack/webpack.js';
 const isStaticExport = process.env.STATIC_EXPORT === 'true';
 
 const nextConfig = {
+  webpack: (config, { dev }) => {
+    if (dev) {
+      // 限制快取的最大存活時間或強制使用記憶體快取
+      config.cache = {
+        type: 'memory', // 改用記憶體快取，缺點是重開 dev 會稍微慢一點點，但絕不佔硬碟
+      };
+    }
+    return config;
+  },
   output: 'export',   // 啟用靜態導出
   images: {
     unoptimized: true // 靜態導出通常需要關閉預設的圖片優化
   },
-// 🎯 關鍵黑魔法：在 webpack 準備打包時，把本地專用的 api 路由徹底抹消
-  webpack: (config, { isServer, dev }) => {
-    if (!dev) {
-      // 如果不是本地開發模式（也就是正在執行 next build 線上靜態打包時）
-      config.plugins.push(
-        new webpack.IgnorePlugin({
-          resourceRegExp: /src\/app\/admin\/api\/r2/, // 讓編譯器裝作沒看到這個資料夾
-        })
-      );
-    }
-    return config;
+    env: {
   },
 };
 
