@@ -7,7 +7,7 @@ import Link from "next/link";
 import { slugify } from "@/app/_lib/slugify";
 import { useLang } from "@/app/_lib/langContext";
 import SafeImage from "@/app/_components/ui/safeImage";
-import PaintingPumaImages from "../_components/deco/PaintingPumaImages";
+import PaintingPumaImages from "../../_components/deco/PaintingPumaImages";
 // 🎯 引入我們做好的路徑轉換工具
 import { getWorksImagePath } from "@/app/_lib/utils";
 

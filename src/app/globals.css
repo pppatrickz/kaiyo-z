@@ -95,3 +95,23 @@ button{
   display: none;
 }
 
+@media (min-width: 768px) { /* 僅在桌機版生效，手機保持原生的滑順觸控 */
+  ::-webkit-scrollbar {
+    width: 6px;               /* 滾動條寬度：極細無負擔 */
+    height: 6px;              /* 橫向滾動條高度 */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;  /* 滾動條軌道透明，完美透出背景的紙張紋理 bg-paper */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1); /* 滾動條本體：淡淡的半透明黑 */
+    border-radius: 9999px;          /* 圓角 Pill 膠囊感，對齊全站語彙 */
+    transition: background 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3); /* 滑鼠懸停時加深，提供明確的反饋 */
+  }
+}

@@ -1,15 +1,13 @@
-import { notFound } from "next/navigation";
+// src/app/admin/layout.js
+import { LangProvider } from "@/app/_lib/langContext";
 
 export default function AdminLayout({ children }) {
-  // 只有在生產環境編譯（Build）時，才故意讓 /admin 變成 404 不被導出
-  // 本地開發開發端 (development) 則會正常放行
-  // if (process.env.NODE_ENV === "production") {
-  //   notFound(); 
-  // }
-  
-  return <>
-   <div className="w-full h-screen my-10">
-  {children}  
-  </div>
-  </>
+  return (
+    <LangProvider>
+      {/* 🎯 後台專屬：完全滿版、不留白邊、無干擾元件 */}
+      <div className="w-full min-h-screen bg-slate-50 antialiased">
+        {children}
+      </div>
+    </LangProvider>
+  );
 }

@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from "react";
-import Contact from "../_components/sections/Contact";
-import PumaBottomImage from "../_components/deco/PumaBottomImage";
+import Contact from "../../_components/sections/Contact";
+import PumaBottomImage from "../../_components/deco/PumaBottomImage";
 
 
 export default function Page() {

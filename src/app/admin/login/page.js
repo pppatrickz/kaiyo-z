@@ -14,7 +14,6 @@ export default function AdminLoginPage() {
     setLoading(true);
 
     try {
-      // 串接你寫在 functions 中的 Cloudflare API
       const res = await fetch("/admin/api/login", {
         method: "POST",
         headers: {
@@ -26,40 +25,46 @@ export default function AdminLoginPage() {
       const data = await res.json();
 
       if (res.ok && data.success) {
-        // 登入成功，跳轉到後台作品管理主頁
         router.push("/admin");
       } else {
-        setError(data.error || "密碼錯誤，請再試一次。");
+        setError(data.error || "密碼不正確，請再試一次。");
       }
     } catch (err) {
-      setError("連線伺服器失敗，請檢查網路或環境變數。");
+      setError("連線伺服器失敗，請檢查環境變數設定。");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center px-4">
-      <div className="max-w-md w-full bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-2xl space-y-6">
+    <section className="min-h-screen bg-white bg-paper flex flex-col items-center justify-center px-6 relative py-20">
+      
+      {/* 核心登入卡片：優雅白底、溫和陰影、大圓角 */}
+      <div className="max-w-md w-full bg-white/90 border border-gray-100 rounded-[24px] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] space-y-8 relative z-10">
         
-        {/* 標題區 */}
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-white tracking-wider">P_DO LAB</h1>
-          <p className="text-sm text-slate-400 mt-2">管理後台主控台</p>
+        {/* 標題區：乾淨極簡藝術感 */}
+        <div className="text-center space-y-2">
+          <h1 className="text-3xl font-bold text-gray-900 tracking-wide font-sans">
+            KAIYO-Z
+          </h1>
+          <div className="w-8 h-[2px] bg-black mx-auto my-3" /> {/* 極簡分割線 */}
+          <p className="text-xs tracking-widest text-gray-400 uppercase">
+            Dashboard Access
+          </p>
         </div>
 
-        {/* 錯誤訊息提示 */}
+        {/* 錯誤訊息提示：柔和不刺眼 */}
         {error && (
-          <div className="bg-red-500/10 border border-red-500/20 text-red-400 text-sm p-3 rounded-xl text-center">
+          <div className="bg-red-50 text-red-600 text-xs p-3.5 rounded-full text-center border border-red-100 animate-fade-in">
             {error}
           </div>
         )}
 
         {/* 登入表單 */}
-        <form onSubmit={handleLogin} className="space-y-4">
-          <div>
-            <label className="block text-xs font-medium text-slate-400 uppercase tracking-wider mb-2">
-              安全存取密碼
+        <form onSubmit={handleLogin} className="space-y-6">
+          <div className="space-y-2">
+            <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-widest text-center">
+              安全存取金鑰 (Password)
             </label>
             <input
               type="password"
@@ -67,28 +72,34 @@ export default function AdminLoginPage() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="請輸入密碼"
-              className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition text-center tracking-widest"
+              placeholder="••••••••"
+              className="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-full text-gray-900 placeholder-gray-300 focus:outline-none focus:bg-white focus:ring-2 focus:ring-black/5 focus:border-black transition text-center tracking-widest text-sm"
             />
           </div>
 
+          {/* 登入按鈕：對齊黑底白字 Pill 風格 */}
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 bg-white text-slate-950 font-semibold rounded-xl hover:bg-slate-200 active:scale-[0.99] transition disabled:opacity-50 disabled:pointer-events-none"
+            className="w-full py-3.5 bg-black text-white font-medium rounded-full shadow hover:bg-gray-800 active:scale-[0.99] transition disabled:opacity-40 disabled:pointer-events-none text-sm tracking-wider"
           >
-            {loading ? "驗證中..." : "確認登入"}
+            {loading ? "驗證中..." : "進入主控台"}
           </button>
         </form>
 
-        {/* 底部裝飾文字 */}
-        <div className="text-center">
-          <span className="text-[10px] text-slate-600 font-mono">
+        {/* 底部安全防護文字 */}
+        <div className="text-center pt-2">
+          <span className="text-[10px] text-gray-400 font-mono tracking-tight">
             Protected by Cloudflare Edge Network
+          </span>
+          <span className="text-[10px] text-gray-400 font-mono tracking-tight">
+            Powered by P-Do Lab
           </span>
         </div>
 
       </div>
-    </div>
+
+      {/* 🎯 靈魂畫布背景：讓管理面板頁面完美收尾、不留白 */}
+    </section>
   );
 }
