@@ -4,7 +4,7 @@ export async function onRequestGet(context) {
   const url = new URL(request.url);
   const file = url.searchParams.get("file");
 
-  if (!env.MY_R2_BUCKET) {
+  if (!env.MY__BUCKET) {
     return new Response(JSON.stringify({ error: "R2 Bucket 未綁定" }), { status: 500 });
   }
 
