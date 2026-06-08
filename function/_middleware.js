@@ -1,4 +1,4 @@
-//functions/admin/_middleware.js
+// /functions/admin/_middleware.js
 export async function onRequest(context) {
   const { request, env } = context;
   
@@ -12,15 +12,20 @@ export async function onRequest(context) {
   );
   const authToken = cookies["p_do_session"];
 
-  // 預期正確的 Cookie 權權值
   const EXPECTED_TOKEN = "authenticated_p_do_lab";
   const url = new URL(request.url);
   
-  // 如果 Cookie 不對，且不是在登入頁面或 API，就強制導向登入頁
+  // 🎯 修正點：使用正則表達式，更嚴格、更全面地防護 admin 的所有路徑
+  const isLoginPath = url.pathname.replace(/\/$/, "") === "/admin/login";
+  const isAdminApiPath = url.pathname.startsWith("/admin/api/");
+  const isAdminArea = url.pathname.startsWith("/admin");
+
+  // 如果在後台範圍內，且既不是登入頁也不是 API，而且 Token 不對，就強制導向
   if (
-    authToken !== EXPECTED_TOKEN && 
-    url.pathname !== "/admin/login" && 
-    !url.pathname.startsWith("/admin/api/")
+    isAdminArea &&
+    !isLoginPath && 
+    !isAdminApiPath &&
+    authToken !== EXPECTED_TOKEN 
   ) {
     return Response.redirect(new URL("/admin/login", request.url), 302);
   }

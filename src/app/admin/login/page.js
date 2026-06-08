@@ -27,7 +27,7 @@ export default function AdminLoginPage() {
 
       if (res.ok && data.success) {
         // 登入成功，跳轉到後台作品管理主頁
-        router.push("/admin/works");
+        router.push("/admin");
       } else {
         setError(data.error || "密碼錯誤，請再試一次。");
       }
