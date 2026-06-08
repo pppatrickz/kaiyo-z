@@ -1,3 +1,4 @@
+import webpack from 'next/dist/compiled/webpack/webpack.js';
 /** @type {import('next').NextConfig} */
 const isStaticExport = process.env.STATIC_EXPORT === 'true';
 
@@ -20,6 +21,5 @@ const nextConfig = {
   },
 };
 
-import webpack from 'webpack'; // 記得在最外層引入 webpack
 
 export default nextConfig;
