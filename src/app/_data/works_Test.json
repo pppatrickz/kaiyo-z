@@ -1,0 +1,413 @@
+{
+  "categories": {
+    "illustration": {
+      "en": "Digital illustration",
+      "ja": "デジタルイラストレーション",
+      "zh": "數位插畫"
+    }
+  },
+  "works": [
+    {
+      "id": "c1c32e63-4920-4820-8606-b162a8bbc0cb",
+      "category": "illustration",
+      "images": [
+        "agroupofdogs.jpg",
+        "agroupofdogs1.jpg"
+      ],
+      "title": {
+        "en": "A Group of Dogs",
+        "ja": "ワンワンいっぱい",
+        "zh": "一群狗狗"
+      },
+      "material": {
+        "en": "Eraser Print",
+        "ja": "消しゴム版画",
+        "zh": "橡皮擦版畫"
+      },
+      "date": "2019-01-01",
+      "desc": {
+        "en": "All the dogs are puma.",
+        "ja": "すべての犬はプマです。",
+        "zh": "所有的狗都是噗馬。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "0afc9cd2-16c1-47da-be7e-5420e7e3b678",
+      "category": "illustration",
+      "images": [
+        "browncell.jpg",
+        "browncell1.jpg"
+      ],
+      "title": {
+        "en": "No.701 Brown Cell",
+        "ja": "ブラウン細胞７０１号",
+        "zh": "第柒零壹號 棕色細胞"
+      },
+      "material": {
+        "en": "Mixed media on canvas",
+        "ja": "キャンバスにミクストメディア",
+        "zh": "混合媒材於畫布"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "41x27cm (P6).",
+        "ja": "41x27cm（P6）。",
+        "zh": "41x27公分（P6）。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "494335f8-894c-4d62-a9ec-47d1c9b04b52",
+      "category": "illustration",
+      "images": [
+        "dentist.jpg",
+        "dentist1.jpg"
+      ],
+      "title": {
+        "en": "Dentist",
+        "ja": "歯医者",
+        "zh": "牙醫"
+      },
+      "material": {
+        "en": "Acrylic painting",
+        "ja": "アクリル画",
+        "zh": "壓克力畫"
+      },
+      "date": "2019-01-01",
+      "desc": {
+        "en": "36x50cm.",
+        "ja": "36x50cm。",
+        "zh": "36x50公分。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "fe9d3c63-6201-4483-b951-f339635a4caf",
+      "category": "illustration",
+      "images": [
+        "donotcry.jpg",
+        "donotcry1.jpg"
+      ],
+      "title": {
+        "en": "Do Not Cry",
+        "ja": "泣かないで",
+        "zh": "賣考"
+      },
+      "material": {
+        "en": "Acrylic painting",
+        "ja": "アクリル画",
+        "zh": "壓克力畫"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "41x31cm.",
+        "ja": "41x31cm。",
+        "zh": "41x31公分。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "6ab62135-b0e3-41c0-8718-58102b66bc64",
+      "category": "illustration",
+      "images": [
+        "elevator.jpg",
+        "elevator1.jpg"
+      ],
+      "title": {
+        "en": "Elevator",
+        "ja": "エレベーター",
+        "zh": "電梯"
+      },
+      "material": {
+        "en": "Acrylic painting on paper",
+        "ja": "紙にアクリル画",
+        "zh": "壓克力畫於紙上"
+      },
+      "date": "2018-01-01",
+      "desc": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "4b325794-937e-4c03-947e-f2303829427f",
+      "category": "illustration",
+      "images": [
+        "heart.jpg",
+        "haert1.jpg",
+        "haert.png"
+      ],
+      "title": {
+        "en": "Heart",
+        "ja": "心",
+        "zh": "心"
+      },
+      "material": {
+        "en": "Mixed media on canvas",
+        "ja": "キャンバスにミクストメディア",
+        "zh": "混合媒材於畫布"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "40x40cm.",
+        "ja": "40x40cm。",
+        "zh": "40x40公分。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "935239a4-fd65-40f1-bb98-7f22f66d9319",
+      "category": "illustration",
+      "images": [
+        "humanism.jpg",
+        "humanism1.jpg"
+      ],
+      "title": {
+        "en": "Humanism",
+        "ja": "人をモチーフに",
+        "zh": "以人為本"
+      },
+      "material": {
+        "en": "Acrylic painting",
+        "ja": "アクリル画",
+        "zh": "壓克力畫"
+      },
+      "date": "2019-01-01",
+      "desc": {
+        "en": "61x50cm.",
+        "ja": "61x50cm。",
+        "zh": "61x50公分。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "1870bd80-d1cf-46d0-8084-8a0f36edd5ca",
+      "category": "illustration",
+      "images": [
+        "hurt.jpg",
+        "hurt.png",
+        "hurt1.jpg"
+      ],
+      "title": {
+        "en": "Hurt",
+        "ja": "傷付く",
+        "zh": "傷害"
+      },
+      "material": {
+        "en": "Acrylic painting",
+        "ja": "アクリル画",
+        "zh": "壓克力畫"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "40x40cm.",
+        "ja": "40x40cm。",
+        "zh": "40x40公分。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "89e4fd5e-269f-4d90-a693-d6f9abf6cef9",
+      "category": "illustration",
+      "images": [
+        "laugh.png",
+        "laugh1.jpg"
+      ],
+      "title": {
+        "en": "Toward A True Smile",
+        "ja": "心から笑えるように",
+        "zh": "由衷的笑"
+      },
+      "material": {
+        "en": "Mixed media on paper board",
+        "ja": "ボード紙にミクストメディア",
+        "zh": "混合媒材於紙板"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "36x13cm.",
+        "ja": "36x13cm。",
+        "zh": "36x13公分。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "27ed6668-6727-44e0-a93d-5c5c3762a021",
+      "category": "illustration",
+      "images": [
+        "majorityrule.jpg",
+        "majorityrule1.jpg"
+      ],
+      "title": {
+        "en": "The Right Answer?",
+        "ja": "正解？",
+        "zh": "正確答案？"
+      },
+      "material": {
+        "en": "Mineral pigments, Suihi pigments",
+        "ja": "岩絵具、水干絵具",
+        "zh": "岩彩顏料、水干顏料"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "32x24cm. There’s no right or wrong.",
+        "ja": "32x24cm。正しいも間違いもない。",
+        "zh": "32x24公分。沒有絕對的對或錯。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "d75af66a-3aca-4809-9920-731c5641ae74",
+      "category": "illustration",
+      "images": [
+        "nothing go unseen.jpg",
+        "nothinggoesunseen1.jpg"
+      ],
+      "title": {
+        "en": "Nothings Goes Unseen",
+        "ja": "天知る、地知る",
+        "zh": "人在做，天在看"
+      },
+      "material": {
+        "en": "Acrylic painting",
+        "ja": "アクリル画",
+        "zh": "壓克力畫"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "27.3x22cm.",
+        "ja": "27.3x22cm。",
+        "zh": "27.3x22公分。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "e2317e4e-e993-4a11-a279-f3966ad76dc5",
+      "category": "illustration",
+      "images": [
+        "notitle.jpg",
+        "notitle1.jpg"
+      ],
+      "title": {
+        "en": "Notitle",
+        "ja": "無題",
+        "zh": "無題"
+      },
+      "material": {
+        "en": "Mixed media",
+        "ja": "ミクストメディア",
+        "zh": "混合媒材"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "10d51bc5-adf2-4e7e-89e2-172082d43017",
+      "category": "illustration",
+      "images": [
+        "puma_.jpg",
+        "puma_1.jpg"
+      ],
+      "title": {
+        "en": "Puma?",
+        "ja": "プマくん？",
+        "zh": "噗馬？"
+      },
+      "material": {
+        "en": "Mezzotint",
+        "ja": "メゾチント",
+        "zh": "黑版畫（美索版畫）"
+      },
+      "date": "2019-01-01",
+      "desc": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "1cec0be9-051a-44fb-9257-6f404b1a55ef",
+      "category": "illustration",
+      "images": [
+        "puma&tomatoes.jpg",
+        "puma&tomatoes1.jpg"
+      ],
+      "title": {
+        "en": "Puma’s Adventure Diary <Planet Tomato>",
+        "ja": "プマくんの大冒険＜惑星トマト＞",
+        "zh": "噗馬的大冒險<番茄星球>"
+      },
+      "material": {
+        "en": "Acrylic painting",
+        "ja": "アクリル画",
+        "zh": "壓克力畫"
+      },
+      "date": "2023-01-01",
+      "desc": {
+        "en": "41x31.8cm.",
+        "ja": "41x31.8cm。",
+        "zh": "41x31.8公分。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "803ffb04-fe78-4a7e-b919-5fc2f3d19609",
+      "category": "illustration",
+      "images": [
+        "pumapark.jpg",
+        "pumapark1.jpg"
+      ],
+      "title": {
+        "en": "Let The Dog Out",
+        "ja": "わんちゃん解放",
+        "zh": "放狗"
+      },
+      "material": {
+        "en": "Digital illustration",
+        "ja": "デジタルイラストレーション",
+        "zh": "數位插畫"
+      },
+      "date": "2019-01-01",
+      "desc": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "40b0a270-2a32-4b06-bf9f-c6bd7a0fb1c3",
+      "category": "illustration",
+      "images": [
+        "st.jpg",
+        "st1.jpg"
+      ],
+      "title": {
+        "en": "Notitle",
+        "ja": "無題",
+        "zh": "無題"
+      },
+      "material": {
+        "en": "Mineral pigments, Suihi pigments, gold leaf, silver leaf",
+        "ja": "岩絵具、水干絵具、金箔、銀箔",
+        "zh": "岩彩顏料、水干顏料、金箔、銀箔"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      },
+      "showFullDate": false
+    }
+  ]
+}

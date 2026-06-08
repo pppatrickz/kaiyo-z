@@ -1,0 +1,35 @@
+{
+  "en": {
+    "title": "Contact",
+    "name": "Full Name",
+    "email": "Email Address",
+    "message": "Message",
+    "submit": "Submit",
+    "sending": "Sending...",
+    "success": "Thank you for your message, I’ve received it!",
+    "error": "Submission failed, please try again later.",
+    "emailError": "Please enter a valid email address"
+  },
+  "ja": {
+    "title": "お問い合わせ",
+    "name": "氏名",
+    "email": "メールアドレス",
+    "message": "メッセージ",
+    "submit": "送信",
+    "sending": "送信中...",
+    "success": "メッセージを受け取りました。ありがとうございます！",
+    "error": "送信に失敗しました。後でもう一度お試しください。",
+    "emailError": "有効なメールアドレスを入力してください"
+  },
+  "zh": {
+    "title": "聯絡我",
+    "name": "姓名",
+    "email": "電子郵件",
+    "message": "留言",
+    "submit": "送出",
+    "sending": "傳送中...",
+    "success": "感謝您的留言，我已收到！",
+    "error": "送出失敗，請稍後再試。",
+    "emailError": "請輸入有效的 Email 地址"
+  }
+}

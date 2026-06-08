@@ -1,0 +1,28 @@
+[
+  {
+    "image": "cloisonne.png",
+    "title": {
+      "en": "Cloisonne Objects & Accessories",
+      "ja": "七宝焼のオブジェとアクセサリー",
+      "zh": "七寶物件與飾品"
+    },
+    "desc": {
+      "en": "Unique enamel creations inspired by memories and animals.",
+      "ja": "思い出や動物をもとにした七宝焼の表現",
+      "zh": "受記憶與動物啟發的琺瑯作品"
+    }
+  },
+  {
+    "image": "pumasad2.jpg",
+    "title": {
+      "en": "PUMA’S ADVENTURE DIARY",
+      "ja": "PUMA’S ADVENTURE DIARY",
+      "zh": "PUMA’S ADVENTURE DIARY"
+    },
+    "desc": {
+      "en": "57th Japan Cloisonné Artists Association International Exhibition",
+      "ja": "第57回 日本七寶作家協會國際展 學生部門 奨勵賞 ",
+      "zh": "第57回 日本七寶作家協會國際展 學生部門 奨勵賞 "
+    }
+  }
+]

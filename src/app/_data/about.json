@@ -1,0 +1,19 @@
+{
+  "bannerImages": [
+    "1.jpg",
+    "4.jpg",
+    "2.jpg"
+  ],
+  "en": {
+    "title": "About Me",
+    "content": "Hello, I’m Kaiyo. Originally from Taichung, Taiwan, I studied Jewelry & Metal Design at Bunka Gakuen University in Japan and completed my graduate studies in Formative Design. I create illustrations as well as handcrafted pieces that combine cloisonné enamel with metalwork techniques. My works are inspired by fleeting memories, gentle moments with animals, and small discoveries in everyday life. With a hand-drawn warmth and a touch of dreamlike air, I hope my creations quietly resonate with the hearts of others — like a small light tucked into memory."
+  },
+  "ja": {
+    "title": "自己紹介",
+    "content": "こんにちは、Kaiyoと申します。台湾の台中出身で、日本の文化学園大学にてジュエリーメタルデザインを学び、大学院ではデザイン造形を専攻しました。現在は、イラストのほか、七宝焼と金工技法を組み合わせた作品を制作しています。心に残る景色や、動物たちとのかけがえのない時間、日々の中でそっと光る小さな気づきを形にしています。手描きの温もりと夢のような空気を大切にしながら、誰かの記憶に寄り添う作品を目指しています。"
+  },
+  "zh": {
+    "title": "關於我",
+    "content": "你好，我是 Kaiyo ，來自台灣台中。曾於日本文化學園大學主修珠寶金屬設計，研究所則專攻設計造形。我從事插畫創作，也製作融合七寶（琺瑯）與金工技法的作品。創作靈感來自於記憶片段、與動物共度的時光，以及日常中悄悄閃現的小發現。希望我的作品能成為一束溫柔的光，靜靜照亮他人心中的某處記憶。"
+  }
+}

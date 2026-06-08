@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+certificates
+
+/kaiyo-z.github.io-main
+
+/public/about/*
+/public/works/*
+/public/news/*
+/public/carousel/*

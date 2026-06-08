@@ -1,0 +1,1442 @@
+{
+  "categories": {
+    "jewelry": {
+      "en": "Jewelry Design",
+      "ja": "ジュエリー制作・デザイン",
+      "zh": "珠寶設計"
+    },
+    "crafts": {
+      "en": "Object Design & Cloisonné",
+      "ja": "オブジェ制作・七宝焼",
+      "zh": "工藝品・珐瑯"
+    },
+    "character": {
+      "en": "Character & Goods Design",
+      "ja": "キャラクター・雑貨デザイン",
+      "zh": "角色・周邊設計"
+    },
+    "illustration": {
+      "en": "Illustration",
+      "ja": "イラストレーション",
+      "zh": "插畫"
+    }
+  },
+  "works": [
+    {
+      "id": "56a7ff8f-2a24-4743-9449-9fda82307518",
+      "category": "jewelry",
+      "title": {
+        "en": "Saturn",
+        "ja": "Saturn",
+        "zh": "Saturn"
+      },
+      "date": "2023-09-26",
+      "desc": {
+        "en": "This piece is a ring crafted with silver-cloisonné enamel using a bezel setting. The distinctive brilliance and translucence of silver cloisonné evoke the image of stars scattered across the night sky, which inspired me to choose the theme “Saturn.” The shape of the ring recalls the rings of Saturn, and when held upright against the light, the reflections create an illusion as if the planet itself emerges. The vastness and mystery of the universe are captured within this piece of jewelry.",
+        "ja": "この作品は銀張七宝を用いた覆輪止めの指輪である。銀張七宝特有の煌めきと透明感が、夜空に浮かぶ星々を連想させるため、「Saturn(サターン)」というテーマを選んだ。指輪の形状が土星の輪を彷彿とさせ、指輪を立てて光にかざすと、光が反射してまるで土星の姿が浮かび上がるかのように見える。宇宙の広大さと神秘を、ジュエリーの中に閉じ込めた。",
+        "zh": "這件作品是一枚以銀張七寶工藝製作、採用覆輪鑲嵌的戒指。銀張七寶獨特的光澤與透明感，讓人聯想到夜空中閃爍的星辰，因此我選擇了「Saturn（土星）」作為主題。戒指的造型讓人想起土星的光環，而當將戒指立起，對著光線欣賞時，反射的光芒彷彿浮現出土星的身影。我將宇宙的浩瀚與神秘，凝縮在這件珠寶之中。"
+      },
+      "images": [
+        "1.png",
+        "2.png"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "真鍮 . 銀箔 .七宝釉薬",
+        "zh": ""
+      }
+    },
+    {
+      "id": "a9d8866c-61ea-4056-93be-db8d08bbc94f",
+      "category": "jewelry",
+      "title": {
+        "en": " 縁Circles ",
+        "ja": " 縁Circles ",
+        "zh": " 縁Circles "
+      },
+      "date": "2024-09-26",
+      "desc": {
+        "en": "In the summer of 2024, I attended a short-term program at the Penland School of Craft in the United States, where I studied wirework. The class brought together ten participants from different countries. This brooch embodies that gathering: ten circles representing the ten members, connected by lines to symbolize our bonds. The piece conveys my gratitude for the invaluable experience at Penland and the joy of cultural exchange.",
+        "ja": "2024年の夏にアメリカにあるペンランドクラフト学校に短期留学し、ワイヤーワークのクラスに参加した。このクラスは10名で構成されており、私たちはそれぞれ異なる国から集まった。このブローチは、その10名を象徴する10個の円を、線でつなげたデザインになっている。ペンランドでの貴重な経験と、異文化交流を通じて楽しく過ごせたことに感謝し、作品に表現した。",
+        "zh": "2024 年夏天，我於美國 Penland 工藝學校 參與金屬線工藝課程，與來自十個不同國家的學員共同學習。這枚胸針以十個圓象徵十位成員，並以線條串連，寓意彼此的交流與連結。作品承載了我在 Penland 的珍貴體驗，以及跨文化交流的喜悅與感謝。"
+      },
+      "images": [
+        "3.png",
+        "4.png"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "銅 .ステンレス",
+        "zh": ""
+      }
+    },
+    {
+      "id": "4f826759-f0b8-4c62-9c27-24731c57489a",
+      "category": "jewelry",
+      "title": {
+        "en": "﻿Floating In The Dark (box)",
+        "ja": "﻿Floating In The Dark (ボックス)",
+        "zh": "﻿Floating In The Dark (珠寶盒)"
+      },
+      "date": "2023-09-23",
+      "desc": {
+        "en": "This work is a set consisting of a jewelry box fused with cloisonné enamel and a brooch housed within it. The exterior of the jewelry box is made of copper, featuring an openwork pattern inspired by jellyfish tentacles, finished in black through sulfurization to evoke the image of a jellyfish drifting in the dark sea. The interior is crafted in silver, whose shimmering surface reflects light, expressing the brilliance of a jellyfish shining in a bright ocean.",
+        "ja": "この作品は、七宝を融合させたジュエリーボックスと、その中に収められたブローチのセットである。ジュエリーボックスの外側は銅で、クラゲの触角を模した透かし模様をデザインし、硫化着色で黒く仕上げた。これは、暗い海の中に浮かぶクラゲのイメージを表現している。内側はシルバーで作られており、煌めくシルバーが光を反射し、明るい海の中で輝く感じを表現している",
+        "zh": "這件作品是一組由七寶工藝結合而成的珠寶盒與其內收納的胸針。珠寶盒外部以銅製作，設計了模仿水母觸手的鏤空圖樣，並以硫化著色處理成黑色，以表現黑暗海洋中漂浮的水母意象。內部則以銀打造，閃耀的銀面反射光線，營造出如同明亮海洋中閃爍輝光的氛圍。"
+      },
+      "images": [
+        "5.png",
+        "6.png"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "銀.銅.淡水パール.銀箔.七宝釉薬",
+        "zh": ""
+      }
+    },
+    {
+      "id": "28ae0731-bbfa-46f6-b38b-4f6c56eddcb7",
+      "category": "jewelry",
+      "title": {
+        "en": "﻿Floating In The Dark (brooch)",
+        "ja": "﻿Floating In The Dark (ブローチ)",
+        "zh": "﻿Floating In The Dark (胸針)"
+      },
+      "date": "2023-09-26",
+      "desc": {
+        "en": "The brooch is kept inside the jewelry box, and when it catches the light, it emits a blue radiance. This represents the way a jellyfish floating in the dark sea glows when it is illuminated. Freshwater pearls are set into the frame of the brooch, adding an extra sparkle.",
+        "ja": "ブローチはジュエリーボックスの内側に収められており、光に当たると青い輝きを放つ。これは、暗い海の中に浮かぶクラゲが光を受けて輝く様子を表現している。ブローチの枠には淡水パールをあしらい、さらに煌めきを加えている。",
+        "zh": "胸針被收納在珠寶盒的內側，當光線照射時，會散發出藍色的光輝。這表現了深海中漂浮的水母在受光時閃耀的模樣。胸針的框架上鑲嵌了淡水珍珠，更增添了閃爍的光彩。"
+      },
+      "images": [
+        "7.png",
+        "8.png"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "銀.淡水パール.銀箔.七宝釉薬",
+        "zh": ""
+      }
+    },
+    {
+      "id": "7726ba0e-cfa2-4ff6-a4e1-55fa127b4870",
+      "category": "jewelry",
+      "title": {
+        "en": "A Rainy Afternoon ",
+        "ja": "A Rainy Afternoon ",
+        "zh": "A Rainy Afternoon "
+      },
+      "date": "2021-09-26",
+      "desc": {
+        "en": "This work is based on the memories and emotions I carried during my high school years. At that time, I was troubled by my relationships with school and classmates, as well as by anxieties about the future, which deepened my longing for freedom. Sometimes, I would deliberately take a bus heading in the opposite direction of school, not caring where it would go, simply to savor the feeling of a free adventure, if only for that moment.\n\nIn this piece, I used cloisonné with silver wire, taking the shape of clouds as the motif to depict transitions of weather such as rain, thunder, and sunshine. I also delicately expressed the way raindrops on the bus window merge and flow down. These elements embody the sense of freedom and uncertainty I felt, along with the fleeting release that came with those moments.",
+        "ja": "この作品は、自分が高校生の頃に抱いた思い出と感情をテーマにしている。当時、学校や同級生との関係、そして未来への不安が私を悩ませ、自由を求める気持ちが強かった。時々、学校とは逆方向のバスにわざと乗り、目的地がどこであろうと気にせず、その時だけは自由に冒険している気分を味わっていた。\n作品では、有線銀張七宝を用いて、雲の形をモチーフにし、雨、雷、晴れなどの天気の移り変わりを表現している。また、車窓に落ちた雨粒が一つになり、流れ落ちる様子も繊細に表現している。これは、私が感じた自由と不確かさ、そしてその瞬間の解放感を表している。",
+        "zh": "這件作品以我高中時期的回憶與情感為主題。那時，我因為與學校、同學之間的關係，以及對未來的焦慮而感到困擾，內心渴望著自由。有時候，我會故意搭上與學校相反方向的公車，不在乎目的地在哪裡，只為了在那一刻體驗到一種自由冒險的感覺。\n\n在作品中，我運用了有線銀胎七寶工藝，以雲的形狀為主題，表現出雨、雷、晴等天氣的變化。同時，也細緻地描繪了車窗上雨滴匯聚後緩緩流下的樣子。這些元素象徵著我當時所感受到的自由與不確定性，以及那一瞬間的解放感。"
+      },
+      "images": [
+        "9.png",
+        "10.png"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "銀.淡水パール.銀箔.七宝釉薬",
+        "zh": ""
+      }
+    },
+    {
+      "id": "e44180af-5eda-4ab9-8b94-2eff7d1c083e",
+      "category": "jewelry",
+      "title": {
+        "en": "My Beloved Dog",
+        "ja": "愛犬",
+        "zh": "愛犬"
+      },
+      "date": "2022-09-26",
+      "desc": {
+        "en": "As a jewelry proposal to pair with T-shirts, I designed a character motif inspired by my beloved dog.",
+        "ja": "Tシャツに合わせジュエリの提案として、愛犬をモチーフにキャラクター\nにデザインを行った。",
+        "zh": "作為與 T 恤搭配的珠寶提案，我以愛犬為靈感，將其設計成角色造型。"
+      },
+      "images": [
+        "11.png",
+        "12.png",
+        "13.png"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "銀.赤銅.打ち込み象嵌.煮色仕上げ",
+        "zh": ""
+      }
+    },
+    {
+      "id": "8a502de5-2d70-4287-b422-0a3697ff8109",
+      "category": "jewelry",
+      "title": {
+        "en": "Majolica",
+        "ja": "Majolica",
+        "zh": "Majolica"
+      },
+      "date": "2020-09-26",
+      "desc": {
+        "en": "This piece is inspired by Taiwan’s traditional Majolica tiles. Geometric continuous patterns were designed and crafted into a bangle.",
+        "ja": "台湾の伝統的なタイルであるマジョリカタイルから発想し、幾何学的な連続模様をデザインし、バングルに制作したものである。",
+        "zh": "此作品的靈感源自台灣的傳統花磚，以幾何的連續圖樣進行設計，並製作成手鐲。"
+      },
+      "images": [
+        "14.png",
+        "15.png"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "真鍮.銀.ムーンストーン",
+        "zh": ""
+      }
+    },
+    {
+      "id": "d14e862e-5794-48a9-b3d7-edef52fb6c31",
+      "category": "jewelry",
+      "title": {
+        "en": "Block",
+        "ja": "Block",
+        "zh": "Block"
+      },
+      "date": "2020-09-26",
+      "desc": {
+        "en": "Inspired by construction sites, I designed block-like shapes and crafted them into a ring.",
+        "ja": "建築現場から発想した。積木のような形をデザインし、指輪に制作した。",
+        "zh": "靈感來自建築工地。以積木般的形狀設計製作成戒指。"
+      },
+      "images": [
+        "16.png",
+        "17.png"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "銀 .ムンストーン   はり合わせリング",
+        "zh": ""
+      }
+    },
+    {
+      "id": "d996f2e6-1b8e-499e-91fb-34473e00815d",
+      "category": "jewelry",
+      "title": {
+        "en": "Ordermade",
+        "ja": "オーダーメイド",
+        "zh": "客製訂做"
+      },
+      "date": "2021-09-26",
+      "desc": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      },
+      "images": [
+        "18.png",
+        "19.png",
+        "20.png",
+        "21.png"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "ad431ff7-ec27-4eef-bf68-df20596e8b34",
+      "category": "jewelry",
+      "title": {
+        "en": "Sketch",
+        "ja": "Sketch",
+        "zh": "Sketch"
+      },
+      "date": "2020-09-26",
+      "desc": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      },
+      "images": [
+        "22.png",
+        "23.png",
+        "24.png",
+        "25.png"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "d0debcb3-ae20-4e74-8cc5-0e75052122e7",
+      "category": "character",
+      "title": {
+        "en": "Puma",
+        "ja": "プマくん",
+        "zh": "噗馬"
+      },
+      "date": "2025-09-26",
+      "desc": {
+        "en": "The character is designed based on my beloved dog, Puma, with whom I shared my life. The story takes inspiration from his journey after departing for heaven, portraying adventures he embarks on in a new world. The aim of this work is to bring comfort and healing to those experiencing the grief of pet loss.",
+        "ja": "プマくんという、自分と共に過ごした愛犬をモチーフにデザインしたキャラクター。天国へ旅立った後のストーリーを題材にし、新たな世界で冒険を繰り広げる物語を描いている。ペットロスの人々を癒すことを目標としている。",
+        "zh": "以我曾經一同生活的愛犬「Puma」為原型，設計出了一個角色。故事的題材取自牠前往天國之後的旅程，描繪了牠在新世界展開冒險的情節。這個作品的目標，是希望能療癒正經歷寵物離世之痛的人們。"
+      },
+      "images": [
+        "1.jpg",
+        "2.png"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "48c53a40-fa5d-4743-af3c-9269bd47b6b3",
+      "category": "character",
+      "title": {
+        "en": "BLIND BOX",
+        "ja": " BLIND BOX フィギュア",
+        "zh": " BLIND BOX"
+      },
+      "date": "2024-09-26",
+      "desc": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      },
+      "images": [
+        "4.png"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "fc4b6f9d-5cdd-4afb-b706-b0b4e4a09fbd",
+      "category": "character",
+      "title": {
+        "en": "Items",
+        "ja": "雑貨・文房具",
+        "zh": "雜貨・文具"
+      },
+      "date": "2024-09-26",
+      "desc": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      },
+      "images": [
+        "5.png"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "938a83e6-4a05-4ead-b9c3-dc016261d232",
+      "category": "character",
+      "title": {
+        "en": "2020 Life of Puma Calendar",
+        "ja": "カレンダーこんにちは。2020 Life of Puma",
+        "zh": "《2020 Life of Puma》日曆"
+      },
+      "date": "2020-09-26",
+      "desc": {
+        "en": "The calendar is themed around the daily life of my dog, Puma, and was created using traditional dyeing techniques such as stencil dyeing and hikizome (brush-dyeing).",
+        "ja": "プマくんの日常生活をテーマし、伝統工芸の型染めを用い、制作した。\n麻.糸.型染め、引き染め。",
+        "zh": "以愛犬噗馬（Puma）的日常生活為主題，運用傳統工藝的型染與引染技法製作而成。"
+      },
+      "images": [
+        "6.png"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "ed04d2e5-bc33-45ad-ae2e-be61821ddb46",
+      "category": "crafts",
+      "title": {
+        "en": "Future technology",
+        "ja": "未来科学生物",
+        "zh": "未來科學生物"
+      },
+      "date": "2022-10-07",
+      "showFullDate": false,
+      "material": {
+        "en": "Copper and Brass, 180×150 mm",
+        "ja": "銅、真鍮．180×150 mm",
+        "zh": "銅、黃銅．180×150 mm"
+      },
+      "desc": {
+        "en": "This piece was designed with the image of a creature that might be born when science and technology reach their ultimate stage in the future.\nWhile scientific advancement enriches and brings convenience to human life,it also worsens the condition of the natural environment. The work aims to raise awareness of the environmental issues that emerge alongside technological progress.",
+        "ja": "未来、科学技術を完成に達し、生み出された生物をイメージにし、デザインした。科学技術の進歩は、人の生活を豊かで便利な物にしていく。一方、科学技術の発展により、自然環境の状況を悪化させていく。科学技術の進歩によって生じた環境問題をより多くの人に意識させたいという思いを主旨とした作品である。",
+        "zh": "以「未來當科學技術達到極致時誕生的生物」為想像藍本進行設計。\n科學技術的進步讓人類的生活變得更加豐富與便利，但同時也因發展而惡化了自然環境的狀況。這件作品以「希望讓更多人意識到科技進步所帶來的環境問題」為主題而創作。"
+      },
+      "images": [
+        "mirai.jpg"
+      ]
+    },
+    {
+      "id": "7cf2d4d7-7a89-4923-84cf-1d729df159aa",
+      "category": "crafts",
+      "title": {
+        "en": "PUMA’S ADVENTURE DIARY",
+        "ja": "PUMA’S ADVENTURE DIARY",
+        "zh": "PUMA’S ADVENTURE DIARY"
+      },
+      "date": "2025-01-01",
+      "desc": {
+        "en": "57th Japan Cloisonné Artists Association International Exhibition – Student Division, Encouragement Award\nBased on memories with my own pet, I illustrated a story like a picture book, selecting a symbolic page as the motif for the work.\nThe piece is designed like a pop-up picture book: inside, gears allow the airplane to move up and down when turned by hand. The airplane part can also be worn as a pendant.",
+        "ja": "第57回 日本七宝作家協会国際展 学生部門 奨励賞\n自分自身のペットとの思い出などに基づいて物語を絵本のように描く。その中から、象徴的なページを作品のモチーフにする。\n仕掛け絵本のように中身は歯車を用いて、手で回すと飛行機が上下に動く仕掛けにした。飛行機の部分はペンダントとしても良い。",
+        "zh": "第57回 日本七寶作家協會國際展 學生部門 奨勵賞\n以與自己寵物的回憶為基礎，像繪本一樣描繪故事，並從其中挑選象徵性的一頁作為作品的主題。\n作品設計成如同機關繪本般的形式，內部使用齒輪，手動轉動時飛機會上下移動。而飛機的部分也可以作為吊墜佩戴。"
+      },
+      "images": [
+        "1.png",
+        "2.png",
+        "3.png"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "f808fdf0-1d95-450a-b901-1220c68c7821",
+      "category": "crafts",
+      "title": {
+        "en": "PUMA’S ADVENTURE DIARY Ver.2",
+        "ja": "PUMA’S ADVENTURE DIARY Ver.2",
+        "zh": "PUMA’S ADVENTURE DIARY Ver.2"
+      },
+      "date": "2025-01-01",
+      "desc": {
+        "en": "Based on memories with my own pet, I illustrated a story like a picture book, selecting a symbolic page as the motif for the work.\nInside, gears create a mechanism that makes the spaceship move up and down when turned by hand. The spaceship itself is also a brooch.",
+        "ja": "自分自身のペットとの思い出などに基づいて物語を絵本のように描く。その中から、象徴的なページを作品のモチーフにする。\n中身は歯車を用いて、手で回すと宇宙船が上下に動くような仕掛けにした。宇宙船はブローチである。",
+        "zh": "以與自己寵物的回憶為基礎，像繪本一般描繪出故事，並從中挑選象徵性的一頁作為作品的主題。\n作品內部設計了齒輪機關，手動轉動時，宇宙船會上下移動。而這艘宇宙船同時也是一枚胸針。"
+      },
+      "images": [
+        "pumaadv2.jpg",
+        "pumaadv2-1.jpg",
+        "6.png"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "ff05f6da-2426-475b-b5c6-2ddbd565af57",
+      "category": "crafts",
+      "title": {
+        "en": "Gaze of the Sky, Warmth of Home",
+        "ja": "空のまなざし 家のぬくもり",
+        "zh": "天空的凝視 家的溫暖"
+      },
+      "date": "2025-09-26",
+      "desc": {
+        "en": "This work is based on my personal experience of parting with a beloved pet, created as an artistic expression to bring healing to those suffering from pet loss. Using cloisonné enamel, I materialized memories with my pet as if they were paintings, and likened death to a “journey.” The design incorporates the narrative and interactivity of a picture book, allowing the viewer to open and close it like turning pages, enjoying both the story and the tactile experience. The piece moves like a folding screen, with the theme of connecting happy memories of the past to hope for the future.",
+        "ja": "本作品は、自身のペットとの別れの経験をもとに、ペットロスを癒すアート表現として制作した。有線七宝でペットとの思い出を絵画のように具現化し、死別を「旅」に喩えている。絵本のような物語性とインタラクティブ性を取り入れ、ページをめくるように開閉することで、ストーリー性と触れる体験を楽しめるデザインにした。屏風のように可動する作品で、過去の幸せな記憶と未来への希望を繋ぐことをテーマにしている。",
+        "zh": "本作品以自身與寵物的離別經驗為基礎，作為療癒寵物離世悲傷的藝術表現而創作。以有線七寶工藝將與寵物的回憶具象化，如同繪畫般呈現，並以「旅行」作為對死亡的隱喻。作品融入了繪本般的故事性與互動性，透過像翻頁一樣的開合設計，讓觀者同時享受故事感與觸覺體驗。此作可如屏風般展開與收合，主題在於連結過去的幸福回憶與對未來的希望。"
+      },
+      "images": [
+        "newsenamel1.jpg",
+        "newsenamel2.jpg",
+        "newsenamel3.jpg",
+        "soranoroof.jpg",
+        "soranoroof1.jpg",
+        "soranoura.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "7a198cae-2945-496e-a9f7-173c102789ca",
+      "category": "crafts",
+      "title": {
+        "en": " Puma’s Everyday Life・Art Lighting Object",
+        "ja": "プマくんの日常・照明器具、オブジェ",
+        "zh": "PUMA的日常・燈飾擺件"
+      },
+      "date": "2024-01-01",
+      "desc": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      },
+      "images": [
+        "13.png",
+        "14.png"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "67f43d67-45d3-428e-b656-a55122a5b5b0",
+      "category": "character",
+      "title": {
+        "en": "Holiday Collection: Halloween Characters",
+        "ja": "ホリデーコレクション ",
+        "zh": "節慶收藏：萬聖節"
+      },
+      "date": "2024-02-26",
+      "desc": {
+        "en": "This collection is themed around two iconic Western holidays—Christmas and Halloween—featuring characters designed to be enjoyed with the changing seasons. Proposed as character goods that enliven the holiday season, they are items that both adults and children can enjoy.",
+        "ja": "クリスマス&ハロウィンキャラクター\nこのコレクションは、クリスマスとハロウィンという2つの象徴的な西洋の祝日をテーマに、季節の移り変わりと共に楽しめるキャラクターをデザインした。ホリデーシーズンを盛り上げるアイテムとして、大人も子供も楽しめるキャラクターグッズとして提案する。",
+        "zh": "這個系列以聖誕節與萬聖節這兩個具有象徵性的西方節日為主題，設計出可隨季節更替而享受的角色。作為節慶氛圍的點綴，這些角色商品不論大人或小孩都能樂在其中。"
+      },
+      "images": [
+        "8.png",
+        "7.png"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "3f76304c-6418-4231-9252-1f598c3feabd",
+      "category": "character",
+      "title": {
+        "en": "Holiday Collection: Christmas Characters",
+        "ja": "ホリデーコレクション ",
+        "zh": "節慶收藏：聖誕節"
+      },
+      "date": "2018-09-26",
+      "desc": {
+        "en": "This collection is themed around two iconic Western holidays—Christmas and Halloween—featuring characters designed to be enjoyed with the changing seasons. Proposed as character goods that enliven the holiday season, they are items that both adults and children can enjoy.",
+        "ja": "クリスマス&ハロウィンキャラクター\nこのコレクションは、クリスマスとハロウィンという2つの象徴的な西洋の祝日をテーマに、季節の移り変わりと共に楽しめるキャラクターをデザインした。ホリデーシーズンを盛り上げるアイテムとして、大人も子供も楽しめるキャラクターグッズとして提案する。",
+        "zh": "這個系列以聖誕節與萬聖節這兩個具有象徵性的西方節日為主題，設計出可隨季節更替而享受的角色。作為節慶氛圍的點綴，這些角色商品不論大人或小孩都能樂在其中。"
+      },
+      "images": [
+        "12.png",
+        "10.png",
+        "11.png",
+        "9.png"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "b8342fc9-be99-4b57-af9b-11fcd56e0e8b",
+      "category": "illustration",
+      "title": {
+        "en": "Alcoholic",
+        "zh": "酒鬼",
+        "ja": "呑兵衛"
+      },
+      "date": "2021-01-01",
+      "desc": {
+        "en": "Digital illustration",
+        "zh": "數位插畫",
+        "ja": "デジタルイラスト"
+      },
+      "images": [
+        "alcoholic-drinker.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "2705e227-0e33-4556-87bd-68debf7708a2",
+      "category": "illustration",
+      "title": {
+        "en": "Level up",
+        "zh": "升等",
+        "ja": "レベルアップ"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "Digital illustration",
+        "zh": "數位插畫",
+        "ja": "デジタルイラスト"
+      },
+      "images": [
+        "bandage.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "1e347337-410c-4acd-8ecf-baab7f998035",
+      "category": "illustration",
+      "title": {
+        "en": "Beer olympics",
+        "zh": "啤酒奧運會",
+        "ja": "ビールのオリンピック大会"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "Digital illustration",
+        "zh": "數位插畫",
+        "ja": "デジタルイラスト"
+      },
+      "images": [
+        "beerolympics.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "c41a85f1-20a9-4fdb-9b9f-9fc729c4ce0f",
+      "category": "illustration",
+      "title": {
+        "en": "welcome to my kitchen",
+        "zh": "歡迎來到我的廚房",
+        "ja": "マイキッチンへようこそ"
+      },
+      "date": "2021-01-01",
+      "desc": {
+        "en": "Digital illustration",
+        "zh": "數位插畫",
+        "ja": "デジタルイラスト"
+      },
+      "images": [
+        "chef-piggy.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "09e14654-46a7-410b-bb37-41e1f65c3c69",
+      "category": "illustration",
+      "title": {
+        "en": "Christmas Party",
+        "zh": "聖誕派對",
+        "ja": "クリスマスパーティー"
+      },
+      "date": "2021-01-01",
+      "desc": {
+        "en": "Digital illustration",
+        "zh": "數位插畫",
+        "ja": "デジタルイラスト"
+      },
+      "images": [
+        "christmas-party.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "e9af5272-115d-41fb-bc68-7705def8b70d",
+      "category": "illustration",
+      "title": {
+        "en": "Egg",
+        "zh": "荷包蛋",
+        "ja": "目玉焼き"
+      },
+      "date": "2021-01-01",
+      "desc": {
+        "en": "Digital illustration",
+        "zh": "數位插畫",
+        "ja": "デジタルイラスト"
+      },
+      "images": [
+        "happyegg.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "cb4c31c8-140d-47a4-9778-9b399653a2de",
+      "category": "illustration",
+      "title": {
+        "en": "Moon Festival",
+        "zh": "滿月",
+        "ja": "中秋の名月"
+      },
+      "date": "2021-01-01",
+      "desc": {
+        "en": "Digital illustration",
+        "zh": "數位插畫",
+        "ja": "デジタルイラスト"
+      },
+      "images": [
+        "happymoon.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "423d2f1f-0b81-4140-8425-9b10582c6ce5",
+      "category": "illustration",
+      "title": {
+        "en": "Measure of the heart",
+        "zh": "內在的量尺",
+        "ja": "心の尺度"
+      },
+      "date": "2021-01-01",
+      "desc": {
+        "en": "Digital illustration",
+        "zh": "數位插畫",
+        "ja": "デジタルイラスト"
+      },
+      "images": [
+        "heartrule.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "f704f583-3045-4b0c-994a-250247431385",
+      "category": "illustration",
+      "title": {
+        "en": "",
+        "zh": "",
+        "ja": ""
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "Digital illustration",
+        "zh": "數位插畫",
+        "ja": "デジタルイラスト"
+      },
+      "images": [
+        "hello-pumpkin.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "d450f8c0-7686-43d1-8efa-27022f691f45",
+      "category": "illustration",
+      "title": {
+        "en": "notitle",
+        "zh": "無題",
+        "ja": "無題"
+      },
+      "date": "2021-01-01",
+      "desc": {
+        "en": "Digital illustration",
+        "zh": "數位插畫",
+        "ja": "デジタルイラスト"
+      },
+      "images": [
+        "hennjinlove.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "516d9b6b-7ddc-4cf3-b0dd-7b809a84bfd6",
+      "category": "illustration",
+      "title": {
+        "en": "Hyakkiyako",
+        "zh": "百鬼夜行",
+        "ja": "百鬼夜行"
+      },
+      "date": "2023-01-01",
+      "desc": {
+        "en": "Digital illustration",
+        "zh": "數位插畫",
+        "ja": "デジタルイラスト"
+      },
+      "images": [
+        "hyakki-yako.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "5679f1d3-a7c7-4a06-90d4-7d2479b57219",
+      "category": "illustration",
+      "title": {
+        "en": "Mr.Perfect",
+        "zh": "完美桑",
+        "ja": "完璧さん"
+      },
+      "date": "2021-01-01",
+      "desc": {
+        "en": "Digital illustration",
+        "zh": "數位插畫",
+        "ja": "デジタルイラスト"
+      },
+      "images": [
+        "mrperfect.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "23f200d4-9e44-407a-874c-b80095391ce6",
+      "category": "illustration",
+      "title": {
+        "en": "The manual for becoming warm soul",
+        "zh": "成為溫暖之人守則",
+        "ja": "あたたかい人になるためマニュアル"
+      },
+      "date": "2021-01-01",
+      "desc": {
+        "en": "Digital illustration",
+        "zh": "數位插畫",
+        "ja": "デジタルイラスト"
+      },
+      "images": [
+        "mrwarm.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "bef22080-1aae-4fda-8b56-9d7131392d42",
+      "category": "illustration",
+      "title": {
+        "en": "The boot is on the other foot",
+        "zh": "處境逆轉",
+        "ja": "立場が逆になった"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "Digital illustration",
+        "zh": "數位插畫",
+        "ja": "デジタルイラスト"
+      },
+      "images": [
+        "picnic.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "287eda66-0c4f-4f42-ada9-30a4adc3d602",
+      "category": "illustration",
+      "title": {
+        "en": "Pumpkin squadron has arrived",
+        "zh": "南瓜特戰隊參上",
+        "ja": "パンプキン特戦隊参上"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "Digital illustration",
+        "zh": "數位插畫",
+        "ja": "デジタルイラスト"
+      },
+      "images": [
+        "pumpkin-sentai.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "419aa8d9-f856-42d3-8a16-1d5bd4f06781",
+      "category": "illustration",
+      "title": {
+        "en": "Pumpkin gang",
+        "zh": "南瓜三兄弟",
+        "ja": "パンプキン三兄弟"
+      },
+      "date": "2021-01-01",
+      "desc": {
+        "en": "Digital illustration",
+        "zh": "數位插畫",
+        "ja": "デジタルイラスト"
+      },
+      "images": [
+        "pumpkingang.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "83dd1ab3-b6d5-47b4-bf69-0f2368a31957",
+      "category": "illustration",
+      "title": {
+        "en": "Partner",
+        "zh": "好夥伴",
+        "ja": "相棒"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "Digital illustration",
+        "zh": "數位插畫",
+        "ja": "デジタルイラスト"
+      },
+      "images": [
+        "sausage&pickle.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "a2134715-d01d-4168-883e-51bab689a1c9",
+      "category": "illustration",
+      "title": {
+        "en": "Ｍaster of time management",
+        "zh": "時間管理大師",
+        "ja": "時間管理マスター"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "Digital illustration",
+        "zh": "數位插畫",
+        "ja": "デジタルイラスト"
+      },
+      "images": [
+        "timemaster.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "b3df6e20-6b8d-41e7-9847-801d530fccc1",
+      "category": "illustration",
+      "title": {
+        "en": "Unhappy moon cake",
+        "zh": "月餅",
+        "ja": "月餅"
+      },
+      "date": "2021-01-01",
+      "desc": {
+        "en": "Digital illustration",
+        "zh": "數位插畫",
+        "ja": "デジタルイラスト"
+      },
+      "images": [
+        "unhappy-moon.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "15d4e3b8-9ea3-4cfd-b278-374be70b63ed",
+      "category": "illustration",
+      "title": {
+        "en": "The start of adventure",
+        "zh": "冒險啟程",
+        "ja": "冒険の始まり"
+      },
+      "date": "2024-01-01",
+      "desc": {
+        "en": "Digital illustration",
+        "zh": "數位插畫",
+        "ja": "デジタルイラスト"
+      },
+      "images": [
+        "universeinbook.jpg"
+      ],
+      "showFullDate": false,
+      "material": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "c1c32e63-4920-4820-8606-b162a8bbc0cb",
+      "category": "illustration",
+      "images": [
+        "agroupofdogs.jpg",
+        "agroupofdogs1.jpg"
+      ],
+      "title": {
+        "en": "A Group of Dogs",
+        "ja": "ワンワンいっぱい",
+        "zh": "一群狗狗"
+      },
+      "material": {
+        "en": "Eraser Print",
+        "ja": "消しゴム版画",
+        "zh": "橡皮擦版畫"
+      },
+      "date": "2019-01-01",
+      "desc": {
+        "en": "All the dogs are puma.",
+        "ja": "すべての犬はプマです。",
+        "zh": "所有的狗都是噗馬。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "0afc9cd2-16c1-47da-be7e-5420e7e3b678",
+      "category": "illustration",
+      "images": [
+        "browncell.jpg",
+        "browncell1.jpg"
+      ],
+      "title": {
+        "en": "No.701 Brown Cell",
+        "ja": "ブラウン細胞７０１号",
+        "zh": "第柒零壹號 棕色細胞"
+      },
+      "material": {
+        "en": "Mixed media on canvas",
+        "ja": "キャンバスにミクストメディア",
+        "zh": "混合媒材於畫布"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "41x27cm (P6).",
+        "ja": "41x27cm（P6）。",
+        "zh": "41x27公分（P6）。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "494335f8-894c-4d62-a9ec-47d1c9b04b52",
+      "category": "illustration",
+      "images": [
+        "dentist.jpg",
+        "dentist1.jpg"
+      ],
+      "title": {
+        "en": "Dentist",
+        "ja": "歯医者",
+        "zh": "牙醫"
+      },
+      "material": {
+        "en": "Acrylic painting",
+        "ja": "アクリル画",
+        "zh": "壓克力畫"
+      },
+      "date": "2019-01-01",
+      "desc": {
+        "en": "36x50cm.",
+        "ja": "36x50cm。",
+        "zh": "36x50公分。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "fe9d3c63-6201-4483-b951-f339635a4caf",
+      "category": "illustration",
+      "images": [
+        "donotcry.jpg",
+        "donotcry1.jpg"
+      ],
+      "title": {
+        "en": "Do Not Cry",
+        "ja": "泣かないで",
+        "zh": "賣考"
+      },
+      "material": {
+        "en": "Acrylic painting",
+        "ja": "アクリル画",
+        "zh": "壓克力畫"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "41x31cm.",
+        "ja": "41x31cm。",
+        "zh": "41x31公分。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "6ab62135-b0e3-41c0-8718-58102b66bc64",
+      "category": "illustration",
+      "images": [
+        "elevator.jpg",
+        "elevator1.jpg"
+      ],
+      "title": {
+        "en": "Elevator",
+        "ja": "エレベーター",
+        "zh": "電梯"
+      },
+      "material": {
+        "en": "Acrylic painting on paper",
+        "ja": "紙にアクリル画",
+        "zh": "壓克力畫於紙上"
+      },
+      "date": "2018-01-01",
+      "desc": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "4b325794-937e-4c03-947e-f2303829427f",
+      "category": "illustration",
+      "images": [
+        "heart.jpg",
+        "haert1.jpg",
+        "haert.png"
+      ],
+      "title": {
+        "en": "Heart",
+        "ja": "心",
+        "zh": "心"
+      },
+      "material": {
+        "en": "Mixed media on canvas",
+        "ja": "キャンバスにミクストメディア",
+        "zh": "混合媒材於畫布"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "40x40cm.",
+        "ja": "40x40cm。",
+        "zh": "40x40公分。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "935239a4-fd65-40f1-bb98-7f22f66d9319",
+      "category": "illustration",
+      "images": [
+        "humanism.jpg",
+        "humanism1.jpg"
+      ],
+      "title": {
+        "en": "Humanism",
+        "ja": "人をモチーフに",
+        "zh": "以人為本"
+      },
+      "material": {
+        "en": "Acrylic painting",
+        "ja": "アクリル画",
+        "zh": "壓克力畫"
+      },
+      "date": "2019-01-01",
+      "desc": {
+        "en": "61x50cm.",
+        "ja": "61x50cm。",
+        "zh": "61x50公分。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "1870bd80-d1cf-46d0-8084-8a0f36edd5ca",
+      "category": "illustration",
+      "images": [
+        "hurt.jpg",
+        "hurt.png",
+        "hurt1.jpg"
+      ],
+      "title": {
+        "en": "Hurt",
+        "ja": "傷付く",
+        "zh": "傷害"
+      },
+      "material": {
+        "en": "Acrylic painting",
+        "ja": "アクリル画",
+        "zh": "壓克力畫"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "40x40cm.",
+        "ja": "40x40cm。",
+        "zh": "40x40公分。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "89e4fd5e-269f-4d90-a693-d6f9abf6cef9",
+      "category": "illustration",
+      "images": [
+        "laugh.png",
+        "laugh1.jpg"
+      ],
+      "title": {
+        "en": "Toward A True Smile",
+        "ja": "心から笑えるように",
+        "zh": "由衷的笑"
+      },
+      "material": {
+        "en": "Mixed media on paper board",
+        "ja": "ボード紙にミクストメディア",
+        "zh": "混合媒材於紙板"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "36x13cm.",
+        "ja": "36x13cm。",
+        "zh": "36x13公分。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "27ed6668-6727-44e0-a93d-5c5c3762a021",
+      "category": "illustration",
+      "images": [
+        "majorityrule.jpg",
+        "majorityrule1.jpg"
+      ],
+      "title": {
+        "en": "The Right Answer?",
+        "ja": "正解？",
+        "zh": "正確答案？"
+      },
+      "material": {
+        "en": "Mineral pigments, Suihi pigments",
+        "ja": "岩絵具、水干絵具",
+        "zh": "岩彩顏料、水干顏料"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "32x24cm. There’s no right or wrong.",
+        "ja": "32x24cm。正しいも間違いもない。",
+        "zh": "32x24公分。沒有絕對的對或錯。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "d75af66a-3aca-4809-9920-731c5641ae74",
+      "category": "illustration",
+      "images": [
+        "nothing go unseen.jpg",
+        "nothinggoesunseen1.jpg"
+      ],
+      "title": {
+        "en": "Nothings Goes Unseen",
+        "ja": "天知る、地知る",
+        "zh": "人在做，天在看"
+      },
+      "material": {
+        "en": "Acrylic painting",
+        "ja": "アクリル画",
+        "zh": "壓克力畫"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "27.3x22cm.",
+        "ja": "27.3x22cm。",
+        "zh": "27.3x22公分。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "e2317e4e-e993-4a11-a279-f3966ad76dc5",
+      "category": "illustration",
+      "images": [
+        "notitle.jpg",
+        "notitle1.jpg"
+      ],
+      "title": {
+        "en": "Notitle",
+        "ja": "無題",
+        "zh": "無題"
+      },
+      "material": {
+        "en": "Mixed media",
+        "ja": "ミクストメディア",
+        "zh": "混合媒材"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "10d51bc5-adf2-4e7e-89e2-172082d43017",
+      "category": "illustration",
+      "images": [
+        "puma_.jpg",
+        "puma_1.jpg"
+      ],
+      "title": {
+        "en": "Puma?",
+        "ja": "プマくん？",
+        "zh": "噗馬？"
+      },
+      "material": {
+        "en": "Mezzotint",
+        "ja": "メゾチント",
+        "zh": "黑版畫（美索版畫）"
+      },
+      "date": "2019-01-01",
+      "desc": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "1cec0be9-051a-44fb-9257-6f404b1a55ef",
+      "category": "illustration",
+      "images": [
+        "puma&tomatoes.jpg",
+        "puma&tomatoes1.jpg"
+      ],
+      "title": {
+        "en": "Puma’s Adventure Diary <Planet Tomato>",
+        "ja": "プマくんの大冒険＜惑星トマト＞",
+        "zh": "噗馬的大冒險<番茄星球>"
+      },
+      "material": {
+        "en": "Acrylic painting",
+        "ja": "アクリル画",
+        "zh": "壓克力畫"
+      },
+      "date": "2023-01-01",
+      "desc": {
+        "en": "41x31.8cm.",
+        "ja": "41x31.8cm。",
+        "zh": "41x31.8公分。"
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "803ffb04-fe78-4a7e-b919-5fc2f3d19609",
+      "category": "illustration",
+      "images": [
+        "pumapark.jpg",
+        "pumapark1.jpg"
+      ],
+      "title": {
+        "en": "Let The Dog Out",
+        "ja": "わんちゃん解放",
+        "zh": "放狗"
+      },
+      "material": {
+        "en": "Digital illustration",
+        "ja": "デジタルイラストレーション",
+        "zh": "數位插畫"
+      },
+      "date": "2019-01-01",
+      "desc": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      },
+      "showFullDate": false
+    },
+    {
+      "id": "40b0a270-2a32-4b06-bf9f-c6bd7a0fb1c3",
+      "category": "illustration",
+      "images": [
+        "st.jpg",
+        "st1.jpg"
+      ],
+      "title": {
+        "en": "Notitle",
+        "ja": "無題",
+        "zh": "無題"
+      },
+      "material": {
+        "en": "Mineral pigments, Suihi pigments, gold leaf, silver leaf",
+        "ja": "岩絵具、水干絵具、金箔、銀箔",
+        "zh": "岩彩顏料、水干顏料、金箔、銀箔"
+      },
+      "date": "2022-01-01",
+      "desc": {
+        "en": "",
+        "ja": "",
+        "zh": ""
+      },
+      "showFullDate": false
+    }
+  ]
+}
