@@ -1,13 +1,13 @@
 // functions/admin/api/r2.js
 
-// ☁️ 雲端 GET：從 R2 儲存桶撈取最新 JSON (保持純粹)
+// ☁️ 雲端 GET：從 R2 儲存桶撈取最新 JSON
 export async function onRequestGet(context) {
   const { env, request } = context;
   const url = new URL(request.url);
   const file = url.searchParams.get("file");
 
-  if (!env.MY_R2_BUCKET) {
-    return new Response(JSON.stringify({ error: "R2 Bucket 未繫結綁定" }), { status: 500, headers: { "Content-Type": "application/json" } });
+  if (!env.MY_R2_BUCKET || typeof env.MY_R2_BUCKET.get !== "function") {
+    return new Response(JSON.stringify({ error: "R2 Bucket 未繫結或繫結型態錯誤" }), { status: 500, headers: { "Content-Type": "application/json; charset=utf-8" } });
   }
 
   if (!file || file.trim() === "") {
@@ -15,9 +15,12 @@ export async function onRequestGet(context) {
   }
 
   try {
-    const object = await env.MY_R2_BUCKET.get(file);
+    // 🎯 核心修正：自動補上 data/ 虛擬目錄前綴，對齊你在 R2 桶子裡的實際路徑！
+    const r2TargetKey = `data/${file.trim()}`; 
+
+    const object = await env.MY_R2_BUCKET.get(r2TargetKey);
     if (object === null) {
-      return new Response(JSON.stringify({ error: `雲端檔案 [${file}] 不存在` }), { status: 404, headers: { "Content-Type": "application/json" } });
+      return new Response(JSON.stringify({ error: `雲端檔案 [${r2TargetKey}] 不存在，請檢查 R2 儲存桶內是否有該路徑` }), { status: 404, headers: { "Content-Type": "application/json; charset=utf-8" } });
     }
 
     const data = await object.text();
@@ -29,12 +32,12 @@ export async function onRequestGet(context) {
   }
 }
 
-// ☁️ 雲端 POST：接收前端資料寫入 R2（補上對本地特徵指令的攔截防禦）
+// ☁️ 雲端 POST：接收前端資料寫入 R2
 export async function onRequestPost(context) {
   const { env, request } = context;
 
-  if (!env.MY_R2_BUCKET) {
-    return new Response(JSON.stringify({ error: "R2 Bucket 未繫結綁定" }), { status: 500, headers: { "Content-Type": "application/json" } });
+  if (!env.MY_R2_BUCKET || typeof env.MY_R2_BUCKET.put !== "function") {
+    return new Response(JSON.stringify({ error: "R2 Bucket 未繫結" }), { status: 500, headers: { "Content-Type": "application/json; charset=utf-8" } });
   }
 
   try {
@@ -43,32 +46,27 @@ export async function onRequestPost(context) {
       return new Response(JSON.stringify({ error: "無效的 JSON Body" }), { status: 400, headers: { "Content-Type": "application/json" } });
     }
 
-    // 🎯 核心防禦：如果雲端收到帶有本地 action 指令（例如 read 或 save）的污然請求，立刻駁回！
     if (body.action !== undefined) {
-      return new Response(
-        JSON.stringify({ error: "雲端 R2 拒絕接收本地特別指令集" }), 
-        { status: 400, headers: { "Content-Type": "application/json" } }
-      );
+      return new Response(JSON.stringify({ error: "雲端 R2 拒絕接收本地特別指令集" }), { status: 400, headers: { "Content-Type": "application/json" } });
     }
 
     const { file, data, deploy = true } = body;
 
-    // 安全防禦
     if (!file || file.includes("..") || file.includes("/") || file.includes("\\")) {
       return new Response(JSON.stringify({ error: "不合法的檔案名稱" }), { status: 400, headers: { "Content-Type": "application/json" } });
     }
 
-    // 確保寫入的資料不為空，防止洗掉資料
     if (data === undefined || data === null) {
       return new Response(JSON.stringify({ error: "儲存的資料內容不能為空" }), { status: 400, headers: { "Content-Type": "application/json" } });
     }
 
-    // 安全寫入 Cloudflare R2
-    await env.MY_R2_BUCKET.put(file.trim(), JSON.stringify(data, null, 2), {
+    // 🎯 核心修正：儲存時也同步補上 data/ 前綴，確保儲存位置與讀取位置絕對對齊！
+    const r2TargetKey = `data/${file.trim()}`;
+
+    await env.MY_R2_BUCKET.put(r2TargetKey, JSON.stringify(data, null, 2), {
       httpMetadata: { contentType: "application/json" },
     });
 
-    // 觸發自動重新建置 Webhook
     let deployTriggered = false;
     if (deploy && env.CLOUDFLARE_DEPLOY_HOOK) {
       try {
@@ -82,9 +80,9 @@ export async function onRequestPost(context) {
     return new Response(
       JSON.stringify({ 
         success: true, 
-        message: deployTriggered ? "資料已更新，網站重組打包中！" : "資料已存入 R2（暫不發布）。" 
+        message: deployTriggered ? "資料已成功同步儲存至 R2 data 資料夾，網站打包部署中！" : "資料已更新至 R2 data 資料夾（暫不發布）。" 
       }), 
-      { status: 200, headers: { "Content-Type": "application/json" } }
+      { status: 200, headers: { "Content-Type": "application/json; charset=utf-8" } }
     );
 
   } catch (err) {
