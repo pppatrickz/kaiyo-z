@@ -3,10 +3,12 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
-export const dynamic = 'force-dynamic'; // 鎖定動態，不讓它在本地被預編譯
 
 // 💻 本地 GET：直接讀取你本機的 _data/ JSON
 export async function GET(request) {
+    if (process.env.NODE_ENV !== 'development') {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
   const { searchParams } = new URL(request.url);
   const file = searchParams.get("file");
 
@@ -28,6 +30,9 @@ export async function GET(request) {
 
 // 💻 本地 POST：直接覆寫你本機的 _data/ JSON，體驗一秒更新
 export async function POST(request) {
+    if (process.env.NODE_ENV !== 'development') {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
   try {
     const body = await request.json();
     const { file, data } = body;
