@@ -1,6 +1,6 @@
 // functions/admin/api/r2.js
 
-// ☁️ 雲端 GET：從 R2 儲存桶撈取最新 JSON
+// ☁️ 雲端 GET：從 R2 儲存桶撈取最新 JSON (保持純粹)
 export async function onRequestGet(context) {
   const { env, request } = context;
   const url = new URL(request.url);
@@ -29,7 +29,7 @@ export async function onRequestGet(context) {
   }
 }
 
-// ☁️ 雲端 POST：接收前端管理面板資料，寫入 R2 並觸發 Webhook 自動部署
+// ☁️ 雲端 POST：接收前端資料寫入 R2（補上對本地特徵指令的攔截防禦）
 export async function onRequestPost(context) {
   const { env, request } = context;
 
@@ -43,11 +43,24 @@ export async function onRequestPost(context) {
       return new Response(JSON.stringify({ error: "無效的 JSON Body" }), { status: 400, headers: { "Content-Type": "application/json" } });
     }
 
+    // 🎯 核心防禦：如果雲端收到帶有本地 action 指令（例如 read 或 save）的污然請求，立刻駁回！
+    if (body.action !== undefined) {
+      return new Response(
+        JSON.stringify({ error: "雲端 R2 拒絕接收本地特別指令集" }), 
+        { status: 400, headers: { "Content-Type": "application/json" } }
+      );
+    }
+
     const { file, data, deploy = true } = body;
 
     // 安全防禦
     if (!file || file.includes("..") || file.includes("/") || file.includes("\\")) {
       return new Response(JSON.stringify({ error: "不合法的檔案名稱" }), { status: 400, headers: { "Content-Type": "application/json" } });
+    }
+
+    // 確保寫入的資料不為空，防止洗掉資料
+    if (data === undefined || data === null) {
+      return new Response(JSON.stringify({ error: "儲存的資料內容不能為空" }), { status: 400, headers: { "Content-Type": "application/json" } });
     }
 
     // 安全寫入 Cloudflare R2
