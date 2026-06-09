@@ -97,7 +97,7 @@ export default function ClientWorkDetail({ work, category, prev, next, categorie
 
         {/* 作品敘述：經典雜誌前導文排版 */}
         <div className="mb-20 max-w-3xl">
-          <p className="text-base md:text-lg leading-relaxed text-neutral-700 font-light text-justify [text-justify:inter-character] tracking-wide whitespace-pre-line first-letter:text-3xl first-letter:font-normal first-letter:mr-2 first-letter:float-left">
+          <p className="text-base md:text-lg leading-relaxed text-neutral-700 font-light text-justify [text-justify:inter-character] tracking-wide whitespace-pre-line ">
             {work.desc?.[lang]}
           </p>
         </div>
@@ -121,7 +121,7 @@ export default function ClientWorkDetail({ work, category, prev, next, categorie
                       aria-label={`open image ${i + 2}`}
                     >
                       <SafeImage
-                        src={`/works/${work.category}/${img}`}
+                        src={getWorksImagePath(work.category, img)}
                         alt={`${work.title?.[lang] || work.id}-${i}`}
                         width={800}
                         height={600}
