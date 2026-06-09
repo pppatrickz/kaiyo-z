@@ -22,7 +22,7 @@ const CenteredVideo = ({src}) => {
         // 設定影片的樣式，使其在容器中佔滿並保持適當的比例
         // max-w-full 和 max-h-full 確保影片不會溢出
         // object-contain 保持長寬比
-        className="h-[98vh] object-contain pointer-events-none" 
+        className="h-[98vh] object-contain pointer-events-none mix-blend-darken" 
       >
         {/* 使用絕對路徑指向 public 資料夾中的檔案 */}
         <source src={src} type="video/webm" />

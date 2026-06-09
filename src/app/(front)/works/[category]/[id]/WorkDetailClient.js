@@ -30,139 +30,155 @@ export default function ClientWorkDetail({ work, category, prev, next, categorie
   const backLabel = categoriesDict?.[category]?.[lang] || "Back";
 
   return (
-    <div className="relative bg-white min-h-screen">
-      {/* 主視覺 */}
-      <div
-        className="relative w-full h-[60vh] hover:h-[90vh] transition-[height] duration-150 cursor-pointer"
-        onClick={() => { setLbIndex(0); setLbOpen(true); }}
-      >
-        <SafeImage
-          src={getWorksImagePath(work.category, mainImage)}
-          alt={work.title?.[lang] || work.id}
-          fill
-          className="object-cover select-none"
-        />
-      </div>
-
-      {/* ====== 描述內容區塊：左側絕對定位返回欄（只作用於本區） ====== */}
-     {/* ====== 描述內容區塊 ====== */}
-<section className="relative">
-  {/* 返回按鈕（手機固定、桌面內容區垂直置中） */}
-  <div
-    className="
-      fixed bottom-[25%] left-2 z-30
-      flex justify-center
-    "
-  >
-    <Link
-      href={backHref}
-      className="
-        pointer-events-auto flex flex-row items-center justify-center
-        text-gray-600 py-5 hover:opacity-80 transition
-      "
-      aria-label='Back to works list'
-    >
-      <svg
-        xmlns='http://www.w3.org/2000/svg'
-        className='w-7 h-7 mb-1'
-        fill='none'
-        viewBox='0 0 24 24'
-        stroke='currentColor'
-        strokeWidth={2}
-      >
-        <path strokeLinecap='round' strokeLinejoin='round' d='M15.75 19.5 8.25 12l7.5-7.5' />
-      </svg>
-      <span>{lang === "zh" ? "" : ""}</span>
-    </Link>
-  </div>
-
-  {/* 內容本體：左側留白，避免被按鈕蓋住 */}
-  <div className="pl-16 md:pl-24 lg:pl-40">
-    <div className="max-w-4xl mx-auto p-6">
-      <h2 className="text-3xl font-bold mb-2 flex items-baseline justify-between">
-        <span>{work.title?.[lang] || "(Untitled)"}</span>
-        {work.material?.[lang]?.trim() && (
-          <span className="text-sm text-gray-600 ml-4">{work.material[lang]}</span>
-        )}
-      </h2>
-
-      <p className="text-gray-600 mb-4">
-        {work.showFullDate ? work.date : work.date?.slice(0, 4)} · {categoriesDict?.[category]?.[lang] || category}
-      </p>
-      <p className="mb-8">{work.desc?.[lang]}</p>
-
-      {/* 縮圖清單 */}
-      <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
-        {thumbs.map((img, i) => (
-          <button
-            key={i}
-            type="button"
-            className="rounded overflow-hidden cursor-pointer break-inside-avoid relative block"
-            onClick={() => { setLbIndex(i + 1); setLbOpen(true); }}
-            aria-label={`open image ${i + 2}`}
+    <div className="relative bg-[#FAFAFA] min-h-screen text-[#1A1A1A] font-sans antialiased selection:bg-neutral-200">
+      
+      {/* 頂部精品式導航列 (手機端完美解放空間，不遮擋內容) */}
+      <header className="w-full px-6 py-5 md:px-12 flex justify-between items-center bg-white/80 backdrop-blur-md sticky top-0 pt-0 md:pt-15 z-40 border-b border-neutral-100">
+        <Link
+          href={backHref}
+          className="group flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-neutral-500 hover:text-black transition-colors"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={1.5}
           >
-            <SafeImage
-              src={`/works/${work.category}/${img}`}
-              alt={`${work.title?.[lang] || work.id}-${i}`}
-              width={600}
-              height={400}
-              className="block w-full h-auto select-none"
-            />
-          </button>
-        ))}
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+          </svg>
+          <span className="text-xs md:text-sm font-light">{backLabel}</span>
+        </Link>
+        <div className="text-xs tracking-[0.3em] uppercase text-neutral-400 font-light hidden sm:block">
+          Kaiyo-Z Portfolio
+        </div>
+      </header>
+
+      {/* 主視覺區塊：手機端帶有白框（經典畫廊感），桌面端可互動放大 */}
+      <div className="p-4 md:p-0">
+        <div
+          className="relative w-full h-[50vh] md:h-[75vh] lg:h-[85vh] transition-[height] duration-300 cursor-zoom-in bg-neutral-100 overflow-hidden rounded-lg md:rounded-none shadow-sm md:shadow-none"
+          onClick={() => { setLbIndex(0); setLbOpen(true); }}
+        >
+          <SafeImage
+            src={getWorksImagePath(work.category, mainImage)}
+            alt={work.title?.[lang] || work.id}
+            fill
+            className="object-contain md:object-cover select-none transition-transform duration-700 hover:scale-105"
+            priority
+          />
+        </div>
       </div>
 
-      {/* 前後作品連結 */}
-<div className="flex mt-12 border-t border-gray-200">
-  {/* 上一個作品 */}
-  {prev ? (
-    <Link
-      href={`/works/${category}/${prev.slug}`}
-      className="
-        w-1/2 flex items-center gap-2 pr-4 py-4
-        text-gray-700 hover:text-black transition
-        overflow-hidden
-      "
-    >
-      <span className="text-xl flex-shrink-0">←</span>
-      <span
-        className="truncate"
-        title={prev.title?.[lang] || "(Untitled)"}
-      >
-        {prev.title?.[lang] || "(Untitled)"}
-      </span>
-    </Link>
-  ) : (
-    <div className="w-1/2" />
-  )}
+      {/* 雜誌排版內容區 */}
+      <main className="max-w-5xl mx-auto px-6 py-12 md:py-24">
+        
+        {/* 標題與元數據：非對稱精品雜誌佈局 */}
+        <div className="border-b border-neutral-200 pb-8 mb-12 flex flex-col md:flex-row md:justify-between md:items-end gap-6">
+          <div className="space-y-3 max-w-2xl">
+            <p className="text-xs uppercase tracking-[0.25em] text-neutral-400 font-medium">
+              {categoriesDict?.[category]?.[lang] || category}
+            </p>
+            <h1 className="text-3xl md:text-5xl font-light tracking-tight leading-tight text-neutral-900">
+              {work.title?.[lang] || "(Untitled)"}
+            </h1>
+          </div>
+          
+          <div className="text-left md:text-right space-y-1 font-light text-sm text-neutral-500 min-w-[200px]">
+            {work.material?.[lang]?.trim() && (
+              <p className="tracking-wide text-neutral-700 font-normal">{work.material[lang]}</p>
+            )}
+            <p className="tracking-widest font-mono text-xs">
+              {work.showFullDate ? work.date : work.date?.slice(0, 4)}
+            </p>
+          </div>
+        </div>
 
-  {/* 下一個作品 */}
-  {next ? (
-    <Link
-      href={`/works/${category}/${next.slug}`}
-      className="
-        w-1/2 flex items-center justify-end gap-2 pl-4 py-4
-        text-gray-700 hover:text-black transition
-        overflow-hidden
-      "
-    >
-      <span
-        className="truncate text-right"
-        title={next.title?.[lang] || "(Untitled)"}
-      >
-        {next.title?.[lang] || "(Untitled)"}
-      </span>
-      <span className="text-xl flex-shrink-0">→</span>
-    </Link>
-  ) : (
-    <div className="w-1/2" />
-  )}
-</div>
+        {/* 作品敘述：經典雜誌前導文排版 */}
+        <div className="mb-20 max-w-3xl">
+          <p className="text-base md:text-lg leading-relaxed text-neutral-700 font-light text-justify [text-justify:inter-character] tracking-wide whitespace-pre-line first-letter:text-3xl first-letter:font-normal first-letter:mr-2 first-letter:float-left">
+            {work.desc?.[lang]}
+          </p>
+        </div>
 
-    </div>
-  </div>
-</section>
+        {/* 縮圖清單：擺脫無聊網格，採用精品畫冊交錯比例 */}
+        {thumbs.length > 0 && (
+          <div className="space-y-12 md:space-y-24 mb-24">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
+              {thumbs.map((img, i) => {
+                // 創造雜誌特有的錯落感：奇數張與偶數張在桌面端有不同的比例與間距
+                const isEven = i % 2 === 0;
+                return (
+                  <div 
+                    key={i} 
+                    className={`w-full ${isEven ? "md:mt-0" : "md:mt-16"} transition-transform duration-500 hover:translate-y-[-4px]`}
+                  >
+                    <button
+                      type="button"
+                      className="w-full bg-neutral-50 rounded-lg overflow-hidden cursor-zoom-in block relative shadow-sm hover:shadow-md transition-shadow"
+                      onClick={() => { setLbIndex(i + 1); setLbOpen(true); }}
+                      aria-label={`open image ${i + 2}`}
+                    >
+                      <SafeImage
+                        src={`/works/${work.category}/${img}`}
+                        alt={`${work.title?.[lang] || work.id}-${i}`}
+                        width={800}
+                        height={600}
+                        className="block w-full h-auto select-none object-cover"
+                      />
+                    </button>
+                    <p className="mt-3 font-mono text-[10px] tracking-widest text-neutral-400 uppercase">
+                      Detail Fig. 0{i + 2}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
+        {/* 精品式前後作品切換：極簡、大氣 */}
+        <footer className="border-t border-neutral-200 pt-12 mt-16">
+          <div className="flex justify-between items-center font-light text-xs tracking-[0.2em] uppercase text-neutral-400 mb-4">
+            <span>Previous Piece</span>
+            <span>Next Piece</span>
+          </div>
+          
+          <div className="flex justify-between items-center gap-8">
+            {/* 上一個作品 */}
+            {prev ? (
+              <Link
+                href={`/works/${category}/${prev.slug}`}
+                className="group w-1/2 text-left"
+              >
+                <div className="text-base md:text-lg text-neutral-700 group-hover:text-black transition-colors font-light truncate">
+                  <span className="inline-block transform group-hover:-translate-x-1 transition-transform mr-2">←</span>
+                  {prev.title?.[lang] || "(Untitled)"}
+                </div>
+              </Link>
+            ) : (
+              <div className="w-1/2" />
+            )}
+
+            {/* 下一個作品 */}
+            {next ? (
+              <Link
+                href={`/works/${category}/${next.slug}`}
+                className="group w-1/2 text-right"
+              >
+                <div className="text-base md:text-lg text-neutral-700 group-hover:text-black transition-colors font-light truncate">
+                  {next.title?.[lang] || "(Untitled)"}
+                  <span className="inline-block transform group-hover:translate-x-1 transition-transform ml-2">→</span>
+                </div>
+              </Link>
+            ) : (
+              <div className="w-1/2" />
+            )}
+          </div>
+        </footer>
+
+      </main>
 
       {/* Lightbox */}
       <ImageLightbox

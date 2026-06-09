@@ -11,17 +11,29 @@ const R2_PUBLIC_URL = "https://cdn.kaiyo-z.com";
  * 線上環境：返回 "https://.../images/works"
  * */
 export function getWorksImagePath(category, imgName) {
+  if (!imgName) return "";
+
+  // 🎯 核心改造：識別圖片有無雙冒號 "::" 
+  // 如果有（例如 "sculpture::statue.jpg"），就拆開並覆蓋掉傳進來的 category
+  let finalCategory = category || "uncategorized";
+  let finalFileName = imgName;
+
+  if (imgName.includes("::")) {
+    const [originCategory, realFileName] = imgName.split("::");
+    finalCategory = originCategory; // 轉向真正存放圖片的來源分類資料夾
+    finalFileName = realFileName;   // 拿掉冒號前綴，還原真實檔名
+  }
+
   const isProd = process.env.NODE_ENV === "production";
   
   if (isProd) {
     // 線上環境對齊 R2 的結構：/images/works/分類/圖片名
-    return `${R2_PUBLIC_URL}/images/works/${category}/${imgName}`;
+    return `${R2_PUBLIC_URL}/images/works/${finalCategory}/${finalFileName}`;
   } else {
     // 本地端對齊原本的結構：/works/分類/圖片名 (對應 public/works/...)
-    return `/works/${category}/${imgName}`;
+    return `/works/${finalCategory}/${finalFileName}`;
   }
 }
-
 /**
  * 如果輪播圖（Carousel）也有用到，可以比照辦理
  * 本地開發：返回 "/carousel/img.jpg"
@@ -139,4 +151,46 @@ export function getVideoImagePath(videoName) {
   } else {
     return `./${videoName}`; // 保持您本機的相對路徑形式
   }
+}
+
+/**
+ * 取得前台作品圖片的真實完整網址（支援跨分類雙冒號引渡）
+ * @param {string} currentCategory - 該作品目前所屬的分類 (例如: "jewelry")
+ * @param {string} imgName - 儲存在 JSON 裡的圖片名稱 (例如: "ring.jpg" 或 "sculpture::statue.jpg")
+ * @returns {string} 完整的圖片 URL 路徑
+ */
+export function getClientWorkImageSrc(currentCategory, imgName) {
+  if (!imgName) return "";
+
+  let finalCategory = currentCategory || "uncategorized";
+  let finalFileName = imgName;
+
+  // 🎯 核心識別：檢查是否包含雙冒號 "::"（跨分類引用）
+  if (imgName.includes("::")) {
+    const [originCategory, realFileName] = imgName.split("::");
+    finalCategory = originCategory; // 強制將分類轉向來源分類
+    finalFileName = realFileName;   // 取得真正的檔案名稱
+  }
+
+  const isProd = process.env.NODE_ENV === "production";
+
+  // 根據環境輸出對應路徑
+  if (isProd) {
+    return `${R2_PUBLIC_URL}/images/works/${finalCategory}/${finalFileName}`;
+  } else {
+    return `/works/${finalCategory}/${finalFileName}`;
+  }
+}
+
+/**
+ * 工具函式：純粹用來解構雙冒號名稱
+ * @param {string} imgName 
+ * @returns {{ name: string, originCategory: string|null }}
+ */
+export function parseCrossCategoryName(imgName) {
+  if (imgName && imgName.includes("::")) {
+    const [originCategory, realFileName] = imgName.split("::");
+    return { name: realFileName, originCategory };
+  }
+  return { name: imgName, originCategory: null };
 }

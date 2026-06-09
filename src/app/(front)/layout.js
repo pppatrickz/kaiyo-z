@@ -21,7 +21,7 @@ export default function FrontLayout({ children }) {
           <Header />
           
           {/* 🎯 獨立的前台專屬局部捲動區域，完美鎖住外層滾動條 */}
-          <main className="flex-1 overflow-y-auto no-scrollbar">
+          <main className="flex-1 overflow-y-auto no-scrollbar mt-15 md:mt-0">
             {children}
             <Footer />
           </main>
