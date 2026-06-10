@@ -8,7 +8,7 @@ import Carousel from "@/app/_components/ui/Carousel";
 import Contact from "@/app/_components/sections/Contact";
 import StickyStage from "@/app/_components/layout/StickyStage";
 import CenteredVideo from "@/app/_components/ui/CenteredVideo";
-
+import Hero from "../_components/sections/Hero";
 import { useLang } from "@/app/_lib/langContext";
 // 🎯 引入影片切換工具
 import { getVideoImagePath } from "@/app/_lib/utils"; 
@@ -28,11 +28,12 @@ export default function HomePageClient({ newsData, aboutData, carouselData }) {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative min-h-[500vh]">
       {/* 階段 1：影片主視覺 */}
       <StickyStage zIndex={1} innerClassName="bg-white bg-paper">
         {/* 🎯 修改點 1：影片 src 自動對齊（本地吃相對路徑，線上吃 R2 雲端資源） */}
-        <CenteredVideo src={getVideoImagePath("TV.webm")} />
+        {/* <CenteredVideo src={getVideoImagePath("TV.webm")} /> */}
+      <Hero progress={progress} />
       </StickyStage>
 
       {/* 階段 2：最新消息區區塊 */}

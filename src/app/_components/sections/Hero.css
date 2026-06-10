@@ -1,0 +1,66 @@
+
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes textStack {
+  from {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.heroIn {
+  opacity: 0;
+  animation: heroIn 0.7s ease-out forwards;
+}
+
+.textStack {
+  opacity: 0;
+  animation: textStack 0.7s ease-out forwards;
+}
+
+.d300 {
+  animation-delay: 300ms;
+}
+
+.d800 {
+  animation-delay: 800ms;
+}
+
+.d1100 {
+  animation-delay: 1100ms;
+}
+
+.d1400 {
+  animation-delay: 1400ms;
+}
+
+.d1900 {
+  animation-delay: 1900ms;
+}
+
+.d2600 {
+  animation-delay: 2600ms;
+}
+
+.d3100 {
+  animation-delay: 3100ms;
+}
+
+.d3600 {
+  animation-delay: 3600ms;
+}
