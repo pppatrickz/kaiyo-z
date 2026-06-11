@@ -131,7 +131,7 @@ export default function WorksPageClient({ initialData }) {
       </div>
 
       {/* 控制列：分類標籤 + 排序標籤 */}
-      <main className="max-w-6xl mx-auto px-6 py-6 md:py-10">
+      <main className="max-w-6xl mx-auto px-6 py-6 pt-10 md:pt-0 md:py-10">
         
         <div className="mb-10 md:mb-16 flex flex-col gap-6 md:flex-row md:items-center md:justify-between border-b border-neutral-100 pb-4">
           {/* 左側：分類導覽 */}

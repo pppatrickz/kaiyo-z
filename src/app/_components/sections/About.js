@@ -48,7 +48,7 @@ export default function About({ initialAboutData }) {
         {/* 手機端字級縮小 (text-sm)，行高縮小 (leading-6)，置中 (text-center) */}
         <h2 className="text-lg md:text-2xl font-bold mb-3 md:mb-4">{title}</h2>
         {/* 手機端標題字級 (text-lg) 和下邊距 (mb-3) */}
-        <p className="py-1 md:py-2 whitespace-pre-line">{content}</p>
+        <p className="py-1 md:py-2 whitespace-pre-line pb-10 md:pb-0">{content}</p>
         {/* 手機端段落上下邊距 (py-1) */}
       </div>
     </div>

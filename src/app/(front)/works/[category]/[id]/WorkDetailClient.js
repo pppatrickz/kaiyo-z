@@ -33,7 +33,7 @@ export default function ClientWorkDetail({ work, category, prev, next, categorie
     <div className="relative bg-[#FAFAFA] min-h-screen text-[#1A1A1A] font-sans antialiased selection:bg-neutral-200">
       
       {/* 頂部精品式導航列 (手機端完美解放空間，不遮擋內容) */}
-      <header className="w-full px-6 py-5 md:px-12 flex justify-between items-center bg-white/80 backdrop-blur-md sticky top-0 pt-0 md:pt-15 z-40 border-b border-neutral-100">
+      <header className="w-full px-6 py-5 md:px-12 flex justify-between items-center bg-white/80 backdrop-blur-md sticky top-0 pt-18 z-40 border-b border-neutral-100">
         <Link
           href={backHref}
           className="group flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-neutral-500 hover:text-black transition-colors"

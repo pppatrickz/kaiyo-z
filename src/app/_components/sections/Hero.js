@@ -62,7 +62,7 @@ export default function Hero({ progress }) {
             alt="a dog wave hands"
             className={`${step >= 2 ? "" : "opacity-0"}
                         group-hover:visible invisible
-                        absolute bottom-10 left-0
+                        absolute bottom-0 left-0
                         h-[32vh] md:h-full w-auto object-contain transition-opacity`}
             width={329}
             height={525}
@@ -73,7 +73,7 @@ export default function Hero({ progress }) {
             alt="a dog"
             className={`${step >= 2 ? "" : "opacity-0"}
                         group-hover:invisible visible
-                        absolute bottom-10 left-0
+                        absolute bottom-0 left-0
                         h-[32vh] md:h-full w-auto object-contain transition-opacity`}
             width={329}
             height={525}
@@ -88,7 +88,7 @@ export default function Hero({ progress }) {
             alt="a duck wave hands"
             className={`${step >= 3 ? "" : "opacity-0"}
                         group-hover:visible invisible
-                        absolute bottom-10 left-0
+                        absolute bottom-0 left-0
                         h-[18vh] md:h-auto w-auto object-contain transition-opacity`}
             width={268}
             height={200}
@@ -99,7 +99,7 @@ export default function Hero({ progress }) {
             alt="a duck"
             className={`${step >= 3 ? "" : "opacity-0"}
                         group-hover:invisible visible
-                        absolute bottom-10 left-0
+                        absolute bottom-0 left-0
                         h-[18vh] md:h-auto w-auto object-contain transition-opacity`}
             width={268}
             height={200}
@@ -112,7 +112,7 @@ export default function Hero({ progress }) {
           src="/hero/mid.png"
           alt="three pumpkin man in clothes with ZOE"
           className={`${step >= 5 ? "animate-bounce-in-place" : "invisible"}
-                      absolute bottom-10 left-1/2 -translate-x-1/2 z-0
+                      absolute bottom-0 left-1/2 -translate-x-1/2 z-0
                       h-[30vh] md:h-full w-auto object-contain transition-opacity`}
           width={800}
           height={514}
@@ -121,7 +121,7 @@ export default function Hero({ progress }) {
 
         {/* 🎯 標題與自動時間差堆疊文字區塊 */}
         <div 
-          className="absolute w-full text-center flex flex-col items-center gap-2 transition-all duration-500 z-10"
+          className="absolute w-full text-center flex flex-col items-center gap-2 transition-all duration-500 z-10 mt-10"
           style={{ top: "12vh" }}
         >
           {/* 第一層：Hello (手機版修正為 text-4xl 避免太大，桌機 text-5xl) */}

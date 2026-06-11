@@ -17,7 +17,7 @@ export async function generateMetadata() {
   const ogImage = getAboutImagePath("og.png"); 
 
   // 2. 合併標題 (控制長度，呈現：關於我 / 自己紹介 / About Me)
-  const combinedTitle = `${zh.title || "關於我"} | ${ja.title || "自己紹介"} | ${en.title || "About Me"} - Kaiyo-Z`;
+  const combinedTitle = `${zh.title || "金工、琺瑯、設計"} | ${ja.title || "金工、七寶燒、デザイン"} | ${en.title || "Metalwork, Enamel, Design"} - Kaiyo-Z`;
 
   // 3. 合併簡介 (各抓前 50~60 個字，控制總字數在 160 字左右，最利於 Google 搜尋與社群顯示)
   const combinedDescription = [

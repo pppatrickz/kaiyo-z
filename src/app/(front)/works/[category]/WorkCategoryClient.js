@@ -46,7 +46,7 @@ export default function WorkCategoryClient({ category, initialData }) {
     <div className="min-h-screen bg-[#FAFAFA] text-[#1A1A1A] font-sans antialiased selection:bg-neutral-200">
       
       {/* 頂部精品式導航列 - 與詳細頁面完美對齊 */}
-      <header className="w-full px-6 py-5 md:px-12 flex justify-between items-center bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-neutral-100">
+      <header className="w-full px-6 py-5 md:px-12 flex justify-between items-center bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-neutral-100 pt-18">
         <Link
           href="/works"
           className="group flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-neutral-500 hover:text-black transition-colors"
